@@ -1,4 +1,4 @@
-@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+@import url("//fonts.googleapis.com/css?family=Impact|Cabin:400,700");
 
 /*!
  * Bootstrap v3.0.0
@@ -7231,7 +7231,7 @@ td.visible-print {
 }
 
 .navbar-brand {
-  font-family: 'Lobster', cursive;
+  font-family: 'Impact', cursive;
 }
 
 .btn .caret {
@@ -7252,7 +7252,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lobster', cursive;
+  font-family: 'Impact', cursive;
 }
 
 .text-primary {
@@ -7306,7 +7306,7 @@ h6 {
 }
 
 legend {
-  font-family: 'Lobster', cursive;
+  font-family: 'Impact', cursive;
   color: #fff;
 }
 
