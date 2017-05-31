@@ -1561,7 +1561,7 @@ th {
 
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
-  background-color: #13a0aa;
+  background-color: #fcfcfc;
 }
 
 table col[class*="col-"] {
@@ -4938,7 +4938,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   padding: 8px 15px;
   margin-bottom: 20px;
   list-style: none;
-  background-color: #13a0aa;
+  background-color: #fcfcfc;
   border-radius: 4px;
 }
 
@@ -4975,7 +4975,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   margin-left: -1px;
   line-height: 1.428571429;
   text-decoration: none;
-  background-color: #13a0aa;
+  background-color: #fcfcfc;
   border: 1px solid transparent;
 }
 
@@ -5018,7 +5018,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .pagination > .disabled > a:focus {
   color: #ffffff;
   cursor: not-allowed;
-  background-color: #13a0aa;
+  background-color: #fcfcfc;
   border-color: transparent;
 }
 
@@ -5123,7 +5123,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .pager li > span {
   display: inline-block;
   padding: 5px 14px;
-  background-color: #13a0aa;
+  background-color: #fcfcfc;
   border: 1px solid transparent;
   border-radius: 15px;
 }
@@ -5150,7 +5150,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .pager .disabled > span {
   color: #ffffff;
   cursor: not-allowed;
-  background-color: #13a0aa;
+  background-color: #fcfcfc;
 }
 
 .label {
@@ -5672,7 +5672,7 @@ a.list-group-item:focus {
 
 .panel {
   margin-bottom: 20px;
-  background-color: #13a0aa;
+  background-color: #fcfcfc;
   border: 1px solid transparent;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -6023,7 +6023,7 @@ body.modal-open,
 
 .modal-content {
   position: relative;
-  background-color: #13a0aa;
+  background-color: #fcfcfc;
   border: 1px solid #999999;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
@@ -7323,7 +7323,7 @@ legend {
 }
 
 .list-group-item {
-  background-color: #13a0aa;
+  background-color: #fcfcfc;
 }
 
 .popover {
