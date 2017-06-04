@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-/* GET home page */
-module.exports.homepage = function(req, res) {
-=======
 //Render function to render the homepage
 module.exports.homepageRender = function(req, res) {
->>>>>>> task-674
     res.render('homepage', { 
       title: 'Welcome to FLACADA',
       gettingstarted: {
@@ -21,10 +16,6 @@ module.exports.homepageRender = function(req, res) {
     });
 };
 
-<<<<<<< HEAD
-
-
-=======
 //Render function to render the conference page
 module.exports.conferenceRender = function(req, res) {
     res.render('conference', {
@@ -177,4 +168,3 @@ module.exports.sponsorsInfoRender = function (req, res) {
         }]
     })
 };
->>>>>>> task-674
