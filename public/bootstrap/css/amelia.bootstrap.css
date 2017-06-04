@@ -1,4 +1,4 @@
-@import url("//fonts.googleapis.com/css?family=Impact|Cabin:400,700");
+@import url("//fonts.googleapis.com/css?family=impact|Cabin:400,700");
 
 /*!
  * Bootstrap v3.0.0
@@ -4699,18 +4699,21 @@ textarea.input-group-sm > .input-group-btn > .btn {
   }
 }
 
+/*color of navbar*/
 .navbar-default {
   background-color: #e0c036;
-  border-color: #e0c036;
+  border-color: #af931b;
 }
 
+/*flacada left icon color*/
 .navbar-default .navbar-brand {
-  color: #ffffff;
+  color: #091f40;
 }
 
+/*flacada hover*/
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #ffffff;
+  color: #123f83;
   background-color: none;
 }
 
@@ -4726,7 +4729,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 /*navbar hover*/
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #cccccc;
+  color: #123f83;
   background-color: transparent;
 }
 
@@ -4744,13 +4747,15 @@ textarea.input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 
+/*the mobile dropdown menu color*/
 .navbar-default .navbar-toggle {
-  border-color: #d92432;
+  border-color: #091f40;
 }
 
+/*hover for dropdown menu*/
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #d92432;
+  background-color: #091f40;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -5841,7 +5846,7 @@ a.list-group-item:focus {
 
 /*heading color*/
 .panel-primary > .panel-heading {
-  color: #091f40;
+  color: #282828;
   background-color: #e0c036;
   border-color: #af931b;
 }
@@ -7236,7 +7241,7 @@ td.visible-print {
 }
 
 .navbar-brand {
-  font-family: 'Impact', cursive;
+  font-family: 'impact', cursive;
 }
 
 .btn .caret {
@@ -7257,7 +7262,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Impact', cursive;
+  font-family: 'impact', cursive;
 }
 
 .text-primary {
@@ -7311,7 +7316,7 @@ h6 {
 }
 
 legend {
-  font-family: 'Impact', cursive;
+  font-family: 'impact', cursive;
   color: #fff;
 }
 
