@@ -4,12 +4,17 @@ block content
         .col-lg-12
             h1= title
     .row
-        .col-xs-12.col-md-8
+        .col-xs-12.col-md-4
             .row
                 .col-xs-12.col-sm-8
                     .panel.panel-primary
                         .panel-heading
                         .panel-body
                             each sponsor in sponsorsList
-                                | &nbsp;#{sponsor.nameOf}
+                                .row
+                                    .col-xs-4
+                                        img(src=sponsor.imageOf)
+                                    .col-xs-8
+                                        a(href='/sponsors-info/') #{sponsor.nameOf}
+                                hr
                                 //TODO: LIST of sponsors : put it with image and name - linking to the according sponsors-info
