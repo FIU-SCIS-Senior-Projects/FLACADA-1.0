@@ -11,5 +11,10 @@ block content
                         .panel-heading
                         .panel-body
                             each exhibitor in exhibitorsList
-                                | &nbsp;#{exhibitor.nameOf}
+                                .row
+                                    .col-xs-4
+                                        img(src=exhibitor.imageOf)
+                                    .col-xs-8
+                                        a(href='/exhibitors-info/') #{exhibitor.nameOf}
+                                hr
                                 //TODO: LIST of exhibitors : put it with image and name - linking to the according exhibitors-info
