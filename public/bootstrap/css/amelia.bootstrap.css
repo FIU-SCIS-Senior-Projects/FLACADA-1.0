@@ -7241,7 +7241,7 @@ td.visible-print {
 }
 
 .navbar-brand {
-  font-family: 'impact', cursive;
+  font-family: 'impact';
 }
 
 .btn .caret {
@@ -7262,7 +7262,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'impact', cursive;
+  font-family: 'impact';
 }
 
 .text-primary {
@@ -7316,7 +7316,7 @@ h6 {
 }
 
 legend {
-  font-family: 'impact', cursive;
+  font-family: 'impact';
   color: #fff;
 }
 
