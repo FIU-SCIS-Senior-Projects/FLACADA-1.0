@@ -1,0 +1,26 @@
+extends layout
+block content
+  .row.page-header
+   .col-lg-12
+      h1= title
+  .row
+    .col-xs-12.col-md-8
+      .row
+        .col-xs-12.col-sm-8
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Getting Started!
+            .panel-body
+              p: #[a(href= gettingstarted.bylaws) Bylaws]
+              p: #[a(href= gettingstarted.membership) Membership]
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Social media
+            .panel-body
+              p: #[a(href= socialinks.facebook) Facebook]
+              p: #[a(href= socialinks.instagram) Instagram]
+              p: #[a(href= socialinks.twitter) Twitter]
+    .col-xs-12.col-md-4
+      p.lead About us
+      p= sidebar
+        
