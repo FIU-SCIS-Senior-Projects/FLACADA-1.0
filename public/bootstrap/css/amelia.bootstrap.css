@@ -1,4 +1,4 @@
-@import url("//fonts.googleapis.com/css?family=inherit|Cabin:400,700");
+@import url("//fonts.googleapis.com/css?family=impact|Cabin:400,700");
 
 /*!
  * Bootstrap v3.0.0
@@ -7241,7 +7241,7 @@ td.visible-print {
 }
 
 .navbar-brand {
-  font-family: 'inherit';
+  font-family: 'impact';
 }
 
 .btn .caret {
@@ -7262,7 +7262,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'inherit';
+  font-family: 'impact';
 }
 
 .text-primary {
@@ -7316,7 +7316,7 @@ h6 {
 }
 
 legend {
-  font-family: 'inherit';
+  font-family: 'impact';
   color: #fff;
 }
 
