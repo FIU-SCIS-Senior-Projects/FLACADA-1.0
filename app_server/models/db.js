@@ -47,3 +47,5 @@ process.on('SIGTERM', function() {
 
 // BRING IN YOUR SCHEMAS & MODELS
 require('./conference');
+require('/sponsor');
+require('./exhibitor')
