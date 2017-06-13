@@ -1,3 +1,4 @@
-/**
- * Created by nickolasmorales on 6/8/17.
- */
+var mongoose = require('mongoose');
+
+
+mongoose.model('Conference', conferenceSchema);
