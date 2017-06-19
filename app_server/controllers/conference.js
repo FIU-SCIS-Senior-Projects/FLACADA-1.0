@@ -8,9 +8,9 @@ module.exports.homepageRender = function(req, res) {
         membership: "http://www.flacada.org/membership/"
       },
       socialinks:{
-        facebook: "https://www.facebook.com/",
-        instagram: "https://www.instagram.com/",
-        twitter: "https://www.twitter.com/"
+        facebook: "https://www.facebook.com/flnacada/",
+        instagram: "https://www.instagram.com/flacada/",
+        twitter: "https://twitter.com/FloridaNACADA/"
       },
       sidebar: "Florida Academic Advising Association (FLACADA) is an organization of professionals from higher education institutions concerned with the personal and academic advising needs of students in Florida. The primary goals of FLACADA are to adhere to the NACADA core values of advising."
     });
