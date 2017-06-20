@@ -46,6 +46,6 @@ process.on('SIGTERM', function() {
 });
 
 // BRING IN YOUR SCHEMAS & MODELS
-require('./conference');
-require('/sponsor');
+require('./sponsor');
 require('./exhibitor')
+require('./session')
