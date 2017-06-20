@@ -37,6 +37,14 @@ module.exports.createExhibitor = function(req, res){
     });
 };
 
+/** DELETE /exhibitors */
+module.exports.deleteExhibitors = function(req, res){
+    Exhibitors.remove({}, function (err, resp) {
+        if (err) next(err);
+        res.json(resp);
+    });
+}
+
 /** GET /exhibitors/:exhibitorid */
 module.exports.getOneExhibitor = function(req, res){
 console.log('Finding exhibitor', req.params);

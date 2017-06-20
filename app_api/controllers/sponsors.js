@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var sponsors = mongoose.model('Sponsor');
+var Sponsors = mongoose.model('Sponsor');
 
 var sendJSONresponse = function(res, status, content) {
   res.status(status);
@@ -9,7 +9,7 @@ var sendJSONresponse = function(res, status, content) {
 /* GET /sponsors */
 module.exports.getSponsors = function(req, res) {
     console.log("Finding sponsors");
-    sponsors
+    Sponsors
     .find(req.query)
     .exec(function(err, sponsors) {
          if (err) {
@@ -25,7 +25,7 @@ module.exports.getSponsors = function(req, res) {
 /* POST /sponsors */
 module.exports.createSponsor = function(req, res){
     console.log(req.body);
-    sponsors
+    Sponsors
     .create(req.body, function(err, sponsor){
         if(err) {
         console.log(err);
@@ -37,10 +37,18 @@ module.exports.createSponsor = function(req, res){
     });
 };
 
+/** DELETE /sponsors */
+module.exports.deleteSponsors = function(req, res){
+    Sponsors.remove({}, function (err, resp) {
+        if (err) next(err);
+        res.json(resp);
+    });
+}
+
 /** GET /sponsors/:sponsorid */
 module.exports.getOneSponsor = function(req, res){
 console.log('Finding Sponsor', req.params);
-    sponsors
+    Sponsors
       .findById(req.params.sponsorid)
       .exec(function(err, sponsor) {
         if (!sponsor) {
@@ -63,7 +71,7 @@ console.log('Finding Sponsor', req.params);
 module.exports.deleteOneSponsor = function(req, res){
     var sponsorid = req.params.sponsorid;
 
-    sponsors.findByIdAndRemove(sponsorid)
+    Sponsors.findByIdAndRemove(sponsorid)
     .exec(function(err, sponsor){
         if (err) {
             console.log(err);

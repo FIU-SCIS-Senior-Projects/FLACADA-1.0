@@ -47,5 +47,6 @@ process.on('SIGTERM', function() {
 
 // BRING IN YOUR SCHEMAS & MODELS
 require('./sponsor');
-require('./exhibitor')
-require('./session')
+require('./exhibitor');
+require('./session');
+//require('./speaker');

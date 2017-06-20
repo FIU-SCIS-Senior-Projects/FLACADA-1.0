@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 Schema = mongoose.Schema
 
+
+
 var speakerSchema = Schema({
     name: {
         type: String,
@@ -20,16 +22,12 @@ var speakerSchema = Schema({
 
 });
 
-
 var sessionSchema = Schema({
     name : {
         type: String,
         required: true
     },
-    speaker: {
-        type: Schema.Types.ObjectId,
-        ref: 'Speaker'
-    },
+    speaker: [speakerSchema],
     startTime: {
         type: Date,
         //required: true
@@ -42,6 +40,8 @@ var sessionSchema = Schema({
         type: String
     } 
 });
+var Speakers = mongoose.model('Speaker', speakerSchema, 'speakers');
 
-mongoose.model('Session', sessionSchema, 'sessions');
-mongoose.model('Speaker', sessionSchema, 'speakers');
+var Sessions = mongoose.model('Session', sessionSchema, 'sessions');
+
+//module.exports = Sessions;
