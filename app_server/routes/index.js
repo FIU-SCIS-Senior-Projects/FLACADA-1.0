@@ -20,4 +20,7 @@ router.get('/sponsors', ctrlConference.sponsorsRender);
 /* GET sponsorsInfo page */
 router.get('/sponsors-info', ctrlConference.sponsorsInfoRender);
 
+/* GET more page */
+router.get('/more', ctrlConference.moreRender);
+
 module.exports = router;

@@ -168,3 +168,9 @@ module.exports.sponsorsInfoRender = function (req, res) {
         }]
     })
 };
+
+module.exports.moreRender = function (req, res) {
+    res.render('more', {
+        title: 'More'
+    })
+}
