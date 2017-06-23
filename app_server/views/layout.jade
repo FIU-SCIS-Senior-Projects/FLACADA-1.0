@@ -11,7 +11,7 @@ html
       .container
         .navbar-header
           a.navbar-brand(href='/') FLACADA
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-main')
+          button.navbar-toggle(type='button', data-target='#navbar-main')
             span.icon-bar
             span.icon-bar
             span.icon-bar
@@ -39,10 +39,14 @@ html
     .container
       block content
 
-      footer
-        .row
-          .col-xs-12
-            small &copy; FLACADA
+  .footer-bottom
+    .container
+      .row
+        .col-xs-12
+          .copyright
+            | © 2017, FLACADA, All rights reserved
+
+
 
 
     script(src='/javascripts/jquery-1.11.1.min.js')
