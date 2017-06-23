@@ -1,7 +1,7 @@
 //Render function to render the homepage
 module.exports.homepageRender = function(req, res) {
     res.render('homepage', { 
-      title: 'Welcome to FLACADA',
+      title: 'FLACADA',
       gettingstarted: {
         title: 'Getting Started',
         bylaws: "http://www.flacada.org/wp-content/uploads/2016/01/FLACADA-Constitution-and-Bylaws-11-9-15.pdf",
@@ -19,7 +19,7 @@ module.exports.homepageRender = function(req, res) {
 //Render function to render the conference page
 module.exports.conferenceRender = function(req, res) {
     res.render('conference', {
-      title: 'Conference',
+      title: 'CONFERENCE',
         conference: {
             exhibitors: '/exhibitors/',
             sponsors: '/sponsors/'
@@ -30,7 +30,7 @@ module.exports.conferenceRender = function(req, res) {
 //Render function to render the exhibitors page
 module.exports.exhibitorsRender = function(req, res) {
   res.render('exhibitors', {
-      title: 'Exhibitors',
+      title: 'EXHIBITORS',
       exhibitorsList:[{
           nameOf: 'Avis',
           imageOf: "/images/avis.png",
@@ -73,7 +73,7 @@ module.exports.exhibitorsRender = function(req, res) {
 //Render function to render the exhibitors-info page
 module.exports.exhibitorsInfoRender = function (req, res) {
     res.render('exhibitors-info', {
-      title: 'Exhibitors Details',
+      title: 'EXHIBITOR DETAILS',
         exhibitorsList:[{
             nameOf: 'Avis',
             imageOf: "/images/avis.png",
@@ -116,7 +116,7 @@ module.exports.exhibitorsInfoRender = function (req, res) {
 //Render function to render the sponsors page
 module.exports.sponsorsRender = function (req, res) {
     res.render('sponsors', {
-        title: 'Our Sponsors',
+        title: 'OUR SPONSORS',
         sponsorsList: [{
             nameOf: 'Google',
             imageOf: '/images/google.png',
@@ -144,7 +144,7 @@ module.exports.sponsorsRender = function (req, res) {
 //Render function to render the sponsors-info page
 module.exports.sponsorsInfoRender = function (req, res) {
     res.render('sponsors-info', {
-        title: 'Sponsors Details',
+        title: 'SPONSORS DETAILS',
         sponsorsList: [{
             nameOf: 'Google',
             imageOf: '/images/google.png',
@@ -167,4 +167,14 @@ module.exports.sponsorsInfoRender = function (req, res) {
             description: 'Oracle Corporation is a multinational computer technology corporation, headquartered in Redwood Shores, California. The company specializes primarily in developing and marketing database software and technology, cloud engineered systems and enterprise software products — particularly its own brands of database management systems. '
         }]
     })
+};
+
+//Render function to render the Schedule page
+module.exports.scheduleRender = function(req, res) {
+    res.render('schedule', {title: 'SCHEDULE'})
+};
+
+//Render function to render the Speakers page
+module.exports.speakersRender = function(req, res) {
+    res.render('speakers', {title: 'SPEAKERS'})
 };
