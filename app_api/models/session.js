@@ -3,7 +3,7 @@ Schema = mongoose.Schema
 
 
 
-var speakerSchema = Schema({
+var speakerSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -22,12 +22,15 @@ var speakerSchema = Schema({
 
 });
 
-var sessionSchema = Schema({
+var sessionSchema = new Schema({
     name : {
         type: String,
         required: true
     },
-    speaker: [speakerSchema],
+    speaker: [{
+        type: Schema.Types.ObjectId,
+        ref : 'Speaker'
+    }],
     startTime: {
         type: Date,
         //required: true

@@ -20,7 +20,6 @@ module.exports.getSpeakers = function(req, res) {
           return;
         }
         console.log(speakers);
-        console.log(speakers.sessions);
         sendJSONresponse(res, 200, speakers);
       });
 
