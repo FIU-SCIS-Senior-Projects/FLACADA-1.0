@@ -4765,8 +4765,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
   background-color: #dbd978;
 }
 
+/*navbar dropdown menu line color*/
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
+  background-color: #091f40;
 }
 
 /*border of little line under dropdown menu for navbar*/
@@ -4801,14 +4802,15 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-bottom-color: #ffffff;
 }
 
+/*more dropdown color and hover*/
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ffffff;
+    color: #091f40;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #ffffff;
-    background-color: #d92432;
+    color: #123f83;
+    background-color: #dbd978;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
