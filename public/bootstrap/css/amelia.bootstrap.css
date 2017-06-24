@@ -489,10 +489,11 @@ h6 small,
   color: #bbbbbb;
 }
 
+/*changed it so flacada icon is closer to flacada title*/
 h1,
 h2,
 h3 {
-  margin-top: 20px;
+  margin-top: -15px;
   margin-bottom: 10px;
 }
 
