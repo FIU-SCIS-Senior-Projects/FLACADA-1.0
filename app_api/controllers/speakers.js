@@ -24,21 +24,6 @@ module.exports.getSpeakers = function(req, res) {
       });
 
 };
-/* POST /speakers */
-module.exports.createSpeaker = function(req, res){
-    console.log(req.body);
-    Speakers
-    .create(req.body, function(err, speaker){
-        if(err) {
-        console.log(err);
-        sendJSONresponse(res, 404, err);
-        return;
-        } 
-        console.log('Speaker created! ' + speaker);
-        console.log(speaker.sessions);
-        sendJSONresponse(res, 200, speaker);
-    });
-};
 
 /** DELETE /speakers */
 module.exports.deleteSpeakers = function(req, res){
@@ -85,21 +70,5 @@ module.exports.deleteOneSpeaker = function(req, res){
           }
           console.log("Speaker id " + speakerid + " deleted");
           sendJSONresponse(res, 204, "Speaker deleted");
-    })
-}
-
-/** GET /speakers/:speakerid/sessions */
-module.exports.getSpeakerSessions = function(req, res){
-    Speakers
-      .find(req.query)
-      .populate('sessions')
-      .exec(function(err, speaker) {
-         if (err) {
-          console.log(err);
-          sendJSONresponse(res, 404, err);
-          return;
-        }
-        console.log(speaker);
-        sendJSONresponse(res, 200, speaker.sessions);
-      });
-}
+    });
+};

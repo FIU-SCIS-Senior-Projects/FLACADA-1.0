@@ -80,5 +80,5 @@ module.exports.deleteOneSponsor = function(req, res){
           }
           console.log("Sponsor id " + sponsorid + " deleted");
           sendJSONresponse(res, 204, null);
-    })
-}
+    });
+};
