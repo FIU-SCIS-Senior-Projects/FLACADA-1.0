@@ -26,4 +26,7 @@ router.get('/schedule', ctrlConference.scheduleRender);
 /* GET speakers page */
 router.get('/speakers', ctrlConference.speakersRender);
 
+/* GET speakers page */
+router.get('/schedule/speaker/new', ctrlConference.addSpeakerRender);
+
 module.exports = router;

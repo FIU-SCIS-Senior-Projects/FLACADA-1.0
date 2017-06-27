@@ -178,3 +178,8 @@ module.exports.scheduleRender = function(req, res) {
 module.exports.speakersRender = function(req, res) {
     res.render('speakers', {title: 'SPEAKERS'})
 };
+
+//Render function to render the AddSpeaker page
+module.exports.addSpeakerRender = function(req, res) {
+    res.render('speaker-form', {title: 'ADD NEW SPEAKER'})
+};
