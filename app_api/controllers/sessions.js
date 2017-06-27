@@ -20,7 +20,7 @@ module.exports.getSessions = function (req, res) {
                 sendJSONresponse(res, 404, err);
                 return;
             }
-            console.log(sessions);;
+            console.log(sessions);
             sendJSONresponse(res, 200, sessions);
         });
 
@@ -42,9 +42,10 @@ module.exports.createSession = function (req, res) {
 
 /** DELETE /sessions */
 module.exports.deleteSessions = function (req, res) {
-    Sessions.remove({}, function (err, resp) {
-        if (err) next(err);
-        res.json(resp);
+    Sessions
+        .remove({}, function (err, resp) {
+            if (err) next(err);
+            res.json(resp);
     });
 }
 
