@@ -4,7 +4,7 @@ module.exports.homepageRender = function(req, res) {
       title: 'FLACADA',
       gettingstarted: {
         title: 'Getting Started',
-        bylaws: "http://www.flacada.org/wp-content/uploads/2016/01/FLACADA-Constitution-and-Bylaws-11-9-15.pdf",
+        bylaws: "http://www.flacada.org/wp-content/uploads/2016/10/FLACADA-Constitution-and-Bylaws.pdf",
         membership: "http://www.flacada.org/membership/"
       },
       socialinks:{
