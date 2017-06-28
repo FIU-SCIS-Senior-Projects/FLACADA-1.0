@@ -9,6 +9,11 @@
                 controller: 'homeCtrl',
                 controllerAs: 'vm'
             })
+            .when('/conference', {
+                templateUrl: '/conference/conference.view.html',
+                controller: 'conferenceCtrl',
+                controllerAs: 'vm'
+            })
             .when('/exhibitors', {
                 templateUrl: '/exhibitors/exhibitors.view.html',
                 controller: 'exhibitorsCtrl',
