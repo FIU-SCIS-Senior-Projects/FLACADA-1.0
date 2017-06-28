@@ -8,11 +8,12 @@
     var vm = this;
     vm.title = 'FLACADA',
     vm.welcome = {
-        title: 'Getting Started',
+        title: 'WELCOME',
         bylaws: "http://www.flacada.org/wp-content/uploads/2016/10/FLACADA-Constitution-and-Bylaws.pdf",
         membership: "http://www.flacada.org/membership/"
       },
-      vm.socialinks ={
+      vm.sociallinks ={
+        title: 'SOCIAL MEDIA',
         facebook: "https://www.facebook.com/flnacada/",
         instagram: "https://www.instagram.com/flacada/",
         twitter: "https://twitter.com/FloridaNACADA/"

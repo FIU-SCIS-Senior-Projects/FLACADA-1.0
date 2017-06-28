@@ -10,21 +10,21 @@
       <div class="col-xs-12 col-sm-8">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h2 class="panel-title">WELCOME</h2>
+            <h2 class="panel-title">{{vm.welcome.title}}</h2>
           </div>
           <div class="panel-body">
-            <p><a href= "http://www.flacada.org/wp-content/uploads/2016/10/FLACADA-Constitution-and-Bylaws.pdf" target="_blank">Bylaws</a></p>
-            <p><a href= "http://www.flacada.org/membership/" target="_blank">Membership</a></p>
+            <p><a ng-href= "{{vm.welcome.bylaws}}" target="_blank">Bylaws</a></p>
+            <p><a ng-href= "{{vm.welcome.membership}}" target="_blank">Membership</a></p>
           </div>
         </div>
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h2 class="panel-title">SOCIAL MEDIA</h2>
+            <h2 class="panel-title">{{vm.sociallinks.title}}</h2>
           </div>
           <div class="panel-body">
-            <p><a href= "https://www.facebook.com/flnacada/" target="_blank">Facebook</a></p>
-            <p><a href= "https://www.instagram.com/flacada/" target="_blank">Instagram</a></p>
-            <p><a href= "https://twitter.com/FloridaNACADA/" target="_blank">Twitter</a></p>
+            <p><a ng-href= "{{vm.sociallinks.facebook}}" target="_blank">Facebook</a></p>
+            <p><a ng-href= "{{vm.sociallinks.instagram}}" target="_blank">Instagram</a></p>
+            <p><a ng-href= "{{vm.sociallinks.twitter}}" target="_blank">Twitter</a></p>
           </div>
         </div>
       </div>

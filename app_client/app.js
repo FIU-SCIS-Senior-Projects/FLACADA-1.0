@@ -20,22 +20,22 @@
                 controller: 'exhibitorsCtrl',
                 controllerAs: 'vm'
             })
-            .when('/exhibitors/:exhibitorid', {
+            .when('/exhibitor/:exhibitorid', {
                 templateUrl: '/details/exhibitorDetail.view.html',
                 controller: 'exhibitorDetailCtrl',
                 controllerAs: 'vm'
             })
+            */
             .when('/sponsors', {
                 templateUrl: '/sponsors/sponsors.view.html',
                 controller: 'sponsorsCtrl',
                 controllerAs: 'vm'
             })
-            .when('/sponsors/:sponsorid', {
-                templateUrl: '/details/sponsorDetail.view.html',
+            .when('/sponsor/:sponsorid', {
+                templateUrl: '/details/sponsorDetail/sponsorDetail.view.html',
                 controller: 'sponsorDetailCtrl',
                 controllerAs: 'vm'
             })
-            */
             .otherwise({ redirectTo: '/' });
         $locationProvider.html5Mode(true);
     }
