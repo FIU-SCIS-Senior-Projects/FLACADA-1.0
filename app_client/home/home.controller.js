@@ -6,7 +6,7 @@
 
   function homeCtrl () {
     var vm = this;
-    vm.title = 'FLACADA',
+    vm.pageHeader = 'FLACADA',
     vm.welcome = {
         title: 'WELCOME',
         bylaws: "http://www.flacada.org/wp-content/uploads/2016/10/FLACADA-Constitution-and-Bylaws.pdf",

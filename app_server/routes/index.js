@@ -23,10 +23,18 @@ router.get('/sponsors-info', ctrlConference.sponsorsInfoRender);
 /* GET schedule page */
 router.get('/schedule', ctrlConference.scheduleRender);
 
+/* GET schedule page */
+router.get('/schedules-info', ctrlConference.schedulesInfoRender);
+
+
 /* GET speakers page */
 router.get('/speakers', ctrlConference.speakersRender);
 
 /* GET speakers page */
 router.get('/schedule/speaker/new', ctrlConference.addSpeakerRender);
+
+/* GET speakersInfo page */
+router.get('/speakers-info/', ctrlConference.speakersInfoRender);
+
 
 module.exports = router;
