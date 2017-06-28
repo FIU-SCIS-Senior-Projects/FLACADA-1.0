@@ -9,6 +9,7 @@
                 controller: 'homeCtrl',
                 controllerAs: 'vm'
             })
+            /*
             .when('/conference', {
                 templateUrl: '/conference/conference.view.html',
                 controller: 'conferenceCtrl',
@@ -34,6 +35,7 @@
                 controller: 'sponsorDetailCtrl',
                 controllerAs: 'vm'
             })
+            */
             .otherwise({ redirectTo: '/' });
         $locationProvider.html5Mode(true);
     }
