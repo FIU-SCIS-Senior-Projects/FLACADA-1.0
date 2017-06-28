@@ -9,7 +9,7 @@
                 controller: 'homeCtrl',
                 controllerAs: 'vm'
             })
-            
+
             .when('/conference', {
                 templateUrl: '/conference/conference.view.html',
                 controller: 'conferenceCtrl',
@@ -35,6 +35,11 @@
             .when('/sponsor/:sponsorid', {
                 templateUrl: '/details/sponsorDetail/sponsorDetail.view.html',
                 controller: 'sponsorDetailCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/speakers', {
+                templateUrl: '/speakers/speakers.view.html',
+                controller: 'speakersCtrl',
                 controllerAs: 'vm'
             })
             .otherwise({ redirectTo: '/' });

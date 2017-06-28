@@ -13,13 +13,14 @@
             <div class="col-xs-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading"></div>
-                    <div class="panel-body" ng-repeat="sponsor in vm.data.sponsors">
+                    <div class="panel-body" ng-repeat="speaker in vm.data.speakers">
                         <div class="row">
                             <div class="col-xs-4">
-                                <img ng-src="{{sponsor.image}}">
+                                <img ng-src="{{speaker.picture}}">
                             </div>
                             <div class="col-xs-8">
-                                <a href="/sponsor/{{ sponsor._id }}">{{ sponsor.name }}</a>
+                                <a href="/speaker/{{ speaker._id }}">{{ speaker.firstName }} {{speaker.lastName}}</a>
+                                <p>{{speaker.institution}}</p>
                             </div>
                         </div>
                     </div>

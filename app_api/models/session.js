@@ -52,7 +52,10 @@ var sessionSchema = new Schema({
     },
     location: {
         type: String
-    } 
+    },
+    description: {
+        type: String
+    }
 });
 var Speakers = mongoose.model('Speaker', speakerSchema, 'speakers');
 

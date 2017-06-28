@@ -11,11 +11,15 @@
         };
         var sponsorDetails = function(sponsorid){
             return $http.get('/api/sponsors/' + sponsorid);
-        }
+        };
+        var speakers = function(){
+            return $http.get('/api/speakers');
+        };
 
         return {
             sponsors: sponsors,
             sponsorDetails: sponsorDetails,
+            speakers: speakers,
         };
     }
 
