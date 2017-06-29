@@ -15,7 +15,7 @@
                                 <img ng-src="{{speaker.picture}}">
                             </div>
                             <div class="col-xs-8">
-                                <a href="/speaker/{{ speaker._id }}">{{ speaker.firstName }} {{speaker.lastName}}</a>
+                                <a ng-href="/speaker/{{ speaker._id }}">{{ speaker.firstName }} {{speaker.lastName}}</a>
                                 <p> {{speaker.title}} </p>
                                 <p>{{speaker.institution}}</p>
                             </div>

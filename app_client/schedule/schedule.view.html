@@ -13,9 +13,8 @@
                             <div class="row">
                                 <div class="col-xs-3"><span class="glyphicon glyphicon-calendar"></span></div>
                                 <div class="col-xs-9">
-                                    <a href="/schedule/{{ session._id }}">{{ session.name }}</a>
-                                    <p class="sessionStartTime">{{ session.startTime | date : 'MMMM d, y h:mm a' }} - {{ session.endTime | date : 'shortTime'
-                                        }}
+                                    <a ng-href="/schedule/{{ session._id }}">{{ session.name }}</a>
+                                    <p class="sessionStartTime">{{ session.startTime | date : 'MMMM d, y h:mm a' }} - {{ session.endTime | date : 'shortTime'}}
                                     </p>
                                     <p> {{session.location}} </p>
                                 </div>

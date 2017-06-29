@@ -42,9 +42,19 @@
                 controller: 'speakersCtrl',
                 controllerAs: 'vm'
             })
+            .when('/speaker/:speakerid', {
+                templateUrl: '/details/speakerDetail/speakerDetail.view.html',
+                controller: 'speakerDetailCtrl',
+                controllerAs: 'vm'
+            })
             .when('/schedule', {
                 templateUrl: '/schedule/schedule.view.html',
                 controller: 'scheduleCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/schedule/:sessionid', {
+                templateUrl: 'details/scheduleDetail/scheduleDetail.view.html',
+                controller: 'scheduleDetailCtrl',
                 controllerAs: 'vm'
             })
             .otherwise({ redirectTo: '/' });

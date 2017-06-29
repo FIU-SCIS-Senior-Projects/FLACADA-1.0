@@ -12,9 +12,7 @@
     flacadaData.sponsorDetails(vm.sponsorid)
       .success(function(data) {
         vm.data = { sponsor: data };
-        vm.pageHeader = {
-          title: vm.data.sponsor.name
-        };
+        vm.pageHeader = vm.data.sponsor.name;
       })
       .error(function (e) {
         console.log(e);
