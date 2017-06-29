@@ -7,9 +7,7 @@
     sponsorsCtrl.$inject = ['$scope', 'flacadaData'];
     function sponsorsCtrl($scope, flacadaData) {
         var vm = this;
-        vm.pageHeader = {
-            title: 'FLACADA'
-        };
+        vm.pageHeader = 'Sponsors';
 
 
         flacadaData.sponsors()

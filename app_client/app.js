@@ -42,6 +42,11 @@
                 controller: 'speakersCtrl',
                 controllerAs: 'vm'
             })
+            .when('/schedule', {
+                templateUrl: '/schedule/schedule.view.html',
+                controller: 'scheduleCtrl',
+                controllerAs: 'vm'
+            })
             .otherwise({ redirectTo: '/' });
         $locationProvider.html5Mode(true);
     }

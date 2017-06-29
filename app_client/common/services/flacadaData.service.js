@@ -15,11 +15,15 @@
         var speakers = function(){
             return $http.get('/api/speakers');
         };
+        var sessions = function(){
+            return $http.get('/api/sessions');
+        }
 
         return {
             sponsors: sponsors,
             sponsorDetails: sponsorDetails,
             speakers: speakers,
+            sessions: sessions,
         };
     }
 
