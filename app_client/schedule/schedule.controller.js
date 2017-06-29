@@ -19,6 +19,17 @@
                 console.log(e);
             });
 
-    }
+        vm.delete = function (sessionid) {
+            console.log(sessionid);
+            flacadaData.deleteSession(sessionid)
+                .success(function (response) {
+                    console.log(response.data);
+                })
+                .error(function (e) {
+                    console.log(e);
+                });
+        };
+
+    };
 
 })();

@@ -24,6 +24,9 @@
         var sessionDetails = function (sessionid) {
             return $http.get('/api/sessions/' + sessionid);
         };
+        var deleteSession = function(sessionid){
+            return $http.delete('/api/sessions/' + sessionid);
+        }
 
         return {
             sponsors: sponsors,
@@ -32,6 +35,7 @@
             sessions: sessions,
             speakerDetails: speakerDetails,
             sessionDetails: sessionDetails,
+            deleteSession : deleteSession,
         };
     }
 

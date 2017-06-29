@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Speakers = mongoose.model('Speaker');
+var Sessions = mongoose.model('Session');
 
 
 var sendJSONresponse = function(res, status, content) {
@@ -70,5 +71,46 @@ module.exports.deleteOneSpeaker = function(req, res){
           }
           console.log("Speaker id " + speakerid + " deleted");
           sendJSONresponse(res, 204, "Speaker deleted");
+    });
+};
+
+
+/** POST 
+ * create session for speaker
+ * /speakers/:speakerid/sessions */
+module.exports.createSpeakerSession = function (req, res) {
+    var speakerid = req.params.speakerid
+    var sessionid;
+    Speakers.findById(speakerid, function (err, speaker) {
+        if (err) throw err;
+        Sessions
+            .create(req.body, function (err, session) {
+                if (err) {
+                    console.log(err);
+                    sendJSONresponse(res, 404, err);
+                    return;
+                }
+                sessionid = session._id;
+                session.speaker.push(speakerid);
+                session.save(function (err, session) {
+                    if (err) {
+                        console.log(err);
+                        sendJSONresponse(res, 404, err);
+                        return;
+                    }
+                    console.log('Created and pushed session into speaker!' + sessionid);
+                });
+
+                speaker.sessions.push(sessionid);
+                speaker.save(function (err, speaker) {
+                    if (err) {
+                        console.log(err);
+                        sendJSONresponse(res, 404, err);
+                        return;
+                    }
+                    console.log('Updated speakers!');
+                    sendJSONresponse(res, 200, session);
+                });
+            });
     });
 };

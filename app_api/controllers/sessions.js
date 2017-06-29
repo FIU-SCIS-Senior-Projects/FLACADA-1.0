@@ -96,7 +96,7 @@ module.exports.deleteOneSession = function (req, res) {
 module.exports.createSessionSpeaker = function (req, res) {
     var sessionid = req.params.sessionid
     var speakerid;
-    Sessions.findById(req.params.sessionid, function (err, session) {
+    Sessions.findById(sessionid, function (err, session) {
         if (err) throw err;
         Speakers
             .create(req.body, function (err, speaker) {
@@ -113,7 +113,7 @@ module.exports.createSessionSpeaker = function (req, res) {
                         sendJSONresponse(res, 404, err);
                         return;
                     }
-                    console.log('Created and pushed session into speaker!' + speakerid);
+                    console.log('Created and pushed speaker into session!' + speakerid);
                 });
 
                 session.speaker.push(speakerid);

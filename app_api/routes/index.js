@@ -32,6 +32,7 @@ router.get('/speakers', ctrlSpeaker.getSpeakers);
 router.delete('/speakers', ctrlSpeaker.deleteSpeakers);
 router.get('/speakers/:speakerid', ctrlSpeaker.getOneSpeaker);
 router.delete('/speakers/:speakerid', ctrlSpeaker.deleteOneSpeaker);
+router.post('/speakers/:speakerid/sessions', ctrlSpeaker.createSpeakerSession);
 
 
 module.exports = router;

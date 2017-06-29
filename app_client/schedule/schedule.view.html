@@ -14,9 +14,12 @@
                                 <div class="col-xs-3"><span class="glyphicon glyphicon-calendar"></span></div>
                                 <div class="col-xs-9">
                                     <a ng-href="/schedule/{{ session._id }}">{{ session.name }}</a>
-                                    <p class="sessionStartTime">{{ session.startTime | date : 'MMMM d, y h:mm a' }} - {{ session.endTime | date : 'shortTime'}}
+                                    <div ng-click="vm.delete(session._id)" class="btn btn-success pull-right">delete </div>
+                                    <p class="sessionStartTime">{{ session.startTime | date : 'MMMM d, y h:mm a ' : 'UTC' }} - {{ session.endTime | date
+                                        : 'h:mm a' : 'UTC'}}
                                     </p>
                                     <p> {{session.location}} </p>
+
                                 </div>
                             </div>
                         </div>

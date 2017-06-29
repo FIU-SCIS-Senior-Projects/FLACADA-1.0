@@ -14,8 +14,8 @@
                                     <div class="col-xs-3"><span class="glyphicon glyphicon-calendar"></span></div>
                                 </div>
                                 <div class="col-xs-8">
-                                    <p class="sessionStartTime">{{ vm.data.session.startTime | date : 'MMMM d, y h:mm a' }} - {{ vm.data.session.endTime
-                                        | date : 'shortTime'}}
+                                    <p class="sessionStartTime">{{ vm.data.session.startTime | date : 'MMMM d, y h:mm a ' : 'UTC'}} - {{ vm.data.session.endTime
+                                        | date : 'h:mm a' : 'UTC'}}
                                     </p>
                                     <p> {{vm.data.session.location}} </p>
                                     <div ng-repeat="speaker in vm.data.session.speaker">
