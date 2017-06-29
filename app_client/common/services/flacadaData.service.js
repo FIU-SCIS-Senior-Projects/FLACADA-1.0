@@ -12,6 +12,12 @@
         var sponsorDetails = function (sponsorid) {
             return $http.get('/api/sponsors/' + sponsorid);
         };
+        var exhibitors = function () {
+            return $http.get('/api/exhibitors');
+        };
+        var exhibitorDetails = function(exhibitorid){
+            return $http.get('/api/exhibitors/' + exhibitorid);
+        };
         var speakers = function () {
             return $http.get('/api/speakers');
         };
@@ -31,6 +37,8 @@
         return {
             sponsors: sponsors,
             sponsorDetails: sponsorDetails,
+            exhibitors: exhibitors,
+            exhibitorDetails : exhibitorDetails,
             speakers: speakers,
             sessions: sessions,
             speakerDetails: speakerDetails,

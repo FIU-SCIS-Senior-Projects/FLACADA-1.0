@@ -15,18 +15,16 @@
                 controller: 'conferenceCtrl',
                 controllerAs: 'vm'
             })
-            /*
             .when('/exhibitors', {
                 templateUrl: '/exhibitors/exhibitors.view.html',
                 controller: 'exhibitorsCtrl',
                 controllerAs: 'vm'
             })
             .when('/exhibitor/:exhibitorid', {
-                templateUrl: '/details/exhibitorDetail.view.html',
+                templateUrl: '/details/exhibitorDetail/exhibitorDetail.view.html',
                 controller: 'exhibitorDetailCtrl',
                 controllerAs: 'vm'
             })
-            */
             .when('/sponsors', {
                 templateUrl: '/sponsors/sponsors.view.html',
                 controller: 'sponsorsCtrl',
