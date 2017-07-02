@@ -4,7 +4,19 @@ Schema = mongoose.Schema
 
 
 var speakerSchema = new Schema({
-    name: {
+    firstName: {
+        type: String,
+        required: true
+    },
+    lastName: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    title: {
         type: String,
         required: true
     },
@@ -15,9 +27,8 @@ var speakerSchema = new Schema({
     picture: {
         type: String
     },
-    description: {
+    institution: {
         type: String,
-        default: ""
     }
 
 });
@@ -41,7 +52,10 @@ var sessionSchema = new Schema({
     },
     location: {
         type: String
-    } 
+    },
+    description: {
+        type: String
+    }
 });
 var Speakers = mongoose.model('Speaker', speakerSchema, 'speakers');
 

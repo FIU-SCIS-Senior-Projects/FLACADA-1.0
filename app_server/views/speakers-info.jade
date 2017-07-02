@@ -1,0 +1,24 @@
+extends layout
+block content
+    .row.page-header
+        .col-lg-12
+            h1= title
+    .row
+        .col-xs-12.col-md-8
+            .row
+                .col-xs-12.col-sm-7
+                    .panel.panel-primary
+                        .panel-heading
+                        .panel-body
+                            .row
+                                .col-xs-6
+                                    img(src="/images/homer.png")
+                                .col-xs-6
+                                    p Name: Homer Simpson
+                                    p Position: Nuclear Powerplant Safety Engineer
+                                    p Email: doughnuts@douh.com
+                                    p Phone: 9999999999
+                                    p Sessions: How to eat 5lbs of pasta
+                .col-xs-12
+                    a.btn.btn-warning( href="/conference/" ) Back to Conference
+                        //TODO: put image banner, name, description, link to their website for the according sponsor

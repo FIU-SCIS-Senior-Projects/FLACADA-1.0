@@ -1,0 +1,35 @@
+<navigation></navigation>
+
+<div class="container">
+    <icon></icon>
+    <page-header content="vm.pageHeader"></page-header>
+    <div class="row">
+        <div class="col-xs-12 col-md-7">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading"></div>
+                        <div class="panel-body" ng-repeat="session in vm.data.sessions">
+                            <div class="row">
+                                <div class="col-xs-3"><span class="glyphicon glyphicon-calendar"></span></div>
+                                <div class="col-xs-9">
+                                    <a ng-href="/schedule/{{ session._id }}">{{ session.name }}</a>
+                                    <div ng-click="vm.delete(session._id)" class="btn btn-success pull-right">delete </div>
+                                    <p class="sessionStartTime">{{ session.startTime | date : 'MMMM d, y h:mm a ' : 'UTC' }} - {{ session.endTime | date
+                                        : 'h:mm a' : 'UTC'}}
+                                    </p>
+                                    <p> {{session.location}} </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12"><a href="/conference/" class="btn btn-warning">Back to Conference</a><a href="/schedule/speaker/new/"
+                            class="btn btn-success pull-right">+</a><a class="btn btn-danger pull-right">-
+          <!--TODO: linking to the according exhibitors-info--></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer-generic></footer-generic>
+</div>

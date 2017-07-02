@@ -4,7 +4,7 @@ module.exports.homepageRender = function(req, res) {
       title: 'FLACADA',
       gettingstarted: {
         title: 'Getting Started',
-        bylaws: "http://www.flacada.org/wp-content/uploads/2016/01/FLACADA-Constitution-and-Bylaws-11-9-15.pdf",
+        bylaws: "http://www.flacada.org/wp-content/uploads/2016/10/FLACADA-Constitution-and-Bylaws.pdf",
         membership: "http://www.flacada.org/membership/"
       },
       socialinks:{
@@ -171,15 +171,85 @@ module.exports.sponsorsInfoRender = function (req, res) {
 
 //Render function to render the Schedule page
 module.exports.scheduleRender = function(req, res) {
-    res.render('schedule', {title: 'SCHEDULE'})
+    res.render('schedule', {
+        title: 'SCHEDULE',
+        sessions:[{
+            nameOf: "How to eat 5lbs of pasta",
+            startTime: "7:00pm",
+            endTime: "11:00pm",
+            place: "Disney",
+            speaker: "Homer Simpson",
+            description: "The speaker will show how to compress 5 lbs of pasta so it's easy to eat."
+        },{
+            nameOf: "Opening your third eye",
+            startTime: "7:00pm",
+            endTime: "11:00pm",
+            place: "MT Everest",
+            speaker: "Lisa Simpson",
+            description: "The speaker will show how to meditate."
+        },{
+            nameOf: "How to shoot a frog to the Moon",
+            startTime: "7:00pm",
+            endTime: "11:00pm",
+            place: "Disney",
+            speaker: "Bart Simpson",
+            description: "Strap a frog to a bottle rocket and light it"
+        }]
+    })
 };
 
 //Render function to render the Speakers page
 module.exports.speakersRender = function(req, res) {
-    res.render('speakers', {title: 'SPEAKERS'})
+    res.render('speakers', {
+        title: 'SPEAKERS',
+        speakersList: [{
+        nameOf: 'Homer Simpson',
+        imageOf: '/images/homer.png',
+        jobTitle: "Nuclear Powerplant Safety Engineer",
+        email: "doughnuts@douh.com",
+        phone: "9999999999",
+        sessions: [{
+            nameOf: "How to eat 5lbs of pasta"
+        }]
+    },{
+        nameOf: 'Bart Simpson',
+        imageOf: '/images/bart.png',
+        jobTitle: "BADA$$",
+        email: "skate@douh.com",
+        phone: "9999999999",
+        sessions: [{
+            nameOf: "How to shoot a frog to the Moon"
+        }]
+    },{
+        nameOf: 'Lisa Simpson',
+        imageOf: '/images/lisa.png',
+        jobTitle: "Woke AF",
+        email: "woke@douh.com",
+        phone: "9999999999",
+        sessions: [{
+            nameOf: "Opening your third eye"
+        }]
+    }]
+    })
 };
 
 //Render function to render the AddSpeaker page
 module.exports.addSpeakerRender = function(req, res) {
-    res.render('speaker-form', {title: 'ADD NEW SPEAKER'})
+    res.render('speaker-form', {
+        title: 'ADD NEW SPEAKER'
+    })
+};
+
+//Render function to render the speakers-info page
+module.exports.speakersInfoRender = function(req, res) {
+    res.render('speakers-info', {
+        title: 'SPEAKER DETAILS'
+    })
+};
+
+//Render function to render the speakers-info page
+module.exports.schedulesInfoRender = function(req, res) {
+    res.render('schedules-info', {
+        title: 'SESSION DETAILS'
+    })
 };
