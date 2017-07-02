@@ -1,0 +1,26 @@
+extends layout
+block content
+    .row.page-header
+        .col-lg-12
+            h1= title
+    .row
+        .col-xs-12.col-md-7
+            .row
+                .col-xs-12.col-sm-8
+                    .panel.panel-primary
+                        .panel-heading
+                        .panel-body
+                            each session in sessions
+                                .row
+                                    .col-xs-3
+                                        span.glyphicon.glyphicon-calendar
+                                    .col-xs-9
+                                        a(href='/schedules-info/') #{session.nameOf}
+                                            | &nbsp;#{session.startTime} | #{session.endTime}
+                                            | &nbsp;#{session.place}
+                                hr
+                .col-xs-12
+                    a.btn.btn-warning( href="/conference/" ) Back to Conference
+                    a.btn.btn-success.pull-right(href="/schedule/speaker/new/" ) +
+                    a.btn.btn-danger.pull-right -
+                        //TODO: linking to the according exhibitors-info
