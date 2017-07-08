@@ -49,4 +49,5 @@ process.on('SIGTERM', function() {
 require('./sponsor');
 require('./exhibitor');
 require('./session');
-//require('./speaker');
+require('./users');
+require('./myschedule');
