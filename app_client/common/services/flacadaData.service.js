@@ -32,8 +32,15 @@
         };
         var deleteSession = function(sessionid){
             return $http.delete('/api/sessions/' + sessionid);
-        }
+        };
 
+        var addSponsor = function (data) {
+            return $http.post('/api/sponsors', data);
+        };
+
+        var addExhibitor = function (data) {
+            return $http.post('/api/exhibitors', data);
+        };
         return {
             sponsors: sponsors,
             sponsorDetails: sponsorDetails,
@@ -44,6 +51,8 @@
             speakerDetails: speakerDetails,
             sessionDetails: sessionDetails,
             deleteSession : deleteSession,
+            addSponsor : addSponsor,
+            addExhibitor: addExhibitor
         };
     }
 
