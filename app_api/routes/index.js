@@ -32,14 +32,14 @@ router.post('/sessions', ctrlSession.createSession);
 router.delete('/sessions', ctrlSession.deleteSessions);
 router.get('/sessions/:sessionid', ctrlSession.getOneSession);
 router.delete('/sessions/:sessionid', ctrlSession.deleteOneSession);
-router.post('/sessions/:sessionid/speakers', ctrlSession.createSessionSpeaker);
+router.post('/sessions/:sessionid/speakers', ctrlSession.createSessionSpeaker); // add speaker to a session
 
 /** Speakers */
 router.get('/speakers', ctrlSpeaker.getSpeakers);
 router.delete('/speakers', ctrlSpeaker.deleteSpeakers);
 router.get('/speakers/:speakerid', ctrlSpeaker.getOneSpeaker);
 router.delete('/speakers/:speakerid', ctrlSpeaker.deleteOneSpeaker);
-router.post('/speakers/:speakerid/sessions', ctrlSpeaker.createSpeakerSession);
+router.post('/speakers/:speakerid/sessions', ctrlSpeaker.createSpeakerSession); //add session to a speaker
 
 //login and register
 router.post('/register', ctrlAuth.register);
