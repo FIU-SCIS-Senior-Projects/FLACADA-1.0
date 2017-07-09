@@ -60,6 +60,7 @@
             getToken : getToken,
             register : register,
             logout : logout,
+            login : login,
             isLoggedIn : isLoggedIn,
             currentUser : currentUser
         }
