@@ -51,13 +51,18 @@
                 controllerAs: 'vm'
             })
             .when('/schedule/:sessionid', {
-                templateUrl: 'details/scheduleDetail/scheduleDetail.view.html',
+                templateUrl: '/details/scheduleDetail/scheduleDetail.view.html',
                 controller: 'scheduleDetailCtrl',
                 controllerAs: 'vm'
             })
             .when('/register', {
                 templateUrl: '/auth/register/register.view.html',
                 controller: 'registerCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/login', {
+                templateUrl: '/auth/login/login.view.html',
+                controller: 'loginCtrl',
                 controllerAs: 'vm'
             })
             .otherwise({ redirectTo: '/' });

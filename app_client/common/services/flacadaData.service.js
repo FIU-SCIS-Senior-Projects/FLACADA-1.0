@@ -4,8 +4,8 @@
         .module('flacadaApp')
         .service('flacadaData', flacadaData);
 
-    flacadaData.$inject = ['$http'];
-    function flacadaData($http) {
+    flacadaData.$inject = ['$http', 'authentication'];
+    function flacadaData($http, authentication) {
         var sponsors = function () {
             return $http.get('/api/sponsors');
         };
