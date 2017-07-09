@@ -22,8 +22,8 @@
                     </div>
                 </div>
                 <div class="col-xs-12"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
-                    <a ng-if=isAdmin ng-click="vm.popupSponsorForm()" class="btn btn-success pull-right">+</a>
-                    <a ng-if=isAdmin class="btn btn-danger pull-right">-</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.popupSponsorForm()" class="btn btn-success pull-right">+</a>
+                    <a ng-if="vm.isAdmin"class="btn btn-danger pull-right">-</a>
                 </div>
             </div>
         </div>

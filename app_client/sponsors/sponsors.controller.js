@@ -9,8 +9,6 @@
         var vm = this;
         vm.pageHeader = 'Sponsors';
 
-        vm.isAdmin = authentication.isAdmin();
-
         flacadaData.sponsors()
             .success(function (data) {
                 vm.data = { sponsors: data };
@@ -30,6 +28,7 @@
                 vm.data.sponsors.push(data);
             })
         }
+        vm.isAdmin = authentication.isAdmin();
     }
 
 })();

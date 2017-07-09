@@ -59,9 +59,8 @@
             if(isLoggedIn()) {
                 var token = getToken();
                 var payload = JSON.parse($window.atob(token.split('.')[1]));
-                return {
-                    admin : payload.admin
-                };
+                if(payload.admin) {return true}
+                else {return false};
             }
          };
 
