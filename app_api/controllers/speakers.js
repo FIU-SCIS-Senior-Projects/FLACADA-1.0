@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var Speakers = mongoose.model('Speaker');
 var Sessions = mongoose.model('Session');
+var User = mongoose.model('User');
 
 
 var sendJSONresponse = function(res, status, content) {

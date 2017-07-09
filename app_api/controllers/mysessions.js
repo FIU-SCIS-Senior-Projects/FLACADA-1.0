@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var mySessions = mongoose.model('MySchedule');
+var User = mongoose.model('User');
 
 
 
@@ -9,19 +10,24 @@ var sendJSONresponse = function(res, status, content) {
 };
 
 /* GET /speakers */
-module.exports.getSpeakers = function(req, res) {
-    console.log("Finding Speakers");
-    Speakers
-    .find(req.query)
-    .populate('sessions')
-    .exec(function(err, speakers) {
+module.exports.getMySessions = function(req, res) {
+
+    console.log("Finding my sessions");
+    console.log(req.payload._id);
+    var userId = req.payload._id;
+    mySessions
+    .findOne({
+        postedBy: userId
+      })
+    .populate('postedBy sessions')
+    .exec(function(err, session) {
          if (err) {
           console.log(err);
           sendJSONresponse(res, 404, err);
           return;
         }
-        console.log(speakers);
-        sendJSONresponse(res, 200, speakers);
+        console.log(session);
+        sendJSONresponse(res, 200, session);
       });
 
 };
