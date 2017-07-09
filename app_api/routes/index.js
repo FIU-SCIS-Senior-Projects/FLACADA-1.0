@@ -1,9 +1,16 @@
 var express = require('express');
 var router = express.Router();
+var jwt = require('express-jwt');
+var auth = jwt({
+secret: process.env.JWT_SECRET,
+userProperty: 'payload'
+});
+
 var ctrlExhibitor = require('../controllers/exhibitors');
 var ctrlSponsor = require('../controllers/sponsors');
 var ctrlSession = require('../controllers/sessions');
 var ctrlSpeaker = require('../controllers/speakers');
+var ctrlAuth = require('../controllers/authentication');
 
 /* Exhibitors */
 router.get('/exhibitors', ctrlExhibitor.getExhibitors);
@@ -33,6 +40,10 @@ router.delete('/speakers', ctrlSpeaker.deleteSpeakers);
 router.get('/speakers/:speakerid', ctrlSpeaker.getOneSpeaker);
 router.delete('/speakers/:speakerid', ctrlSpeaker.deleteOneSpeaker);
 router.post('/speakers/:speakerid/sessions', ctrlSpeaker.createSpeakerSession);
+
+//login and register
+router.post('/register', ctrlAuth.register);
+router.post('/login', ctrlAuth.login);
 
 
 module.exports = router;

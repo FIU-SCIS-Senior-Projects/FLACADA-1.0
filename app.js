@@ -1,11 +1,14 @@
+require('dotenv').load();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var passport = require('passport');
 require('./app_api/models/db');
 
+require('./app_api/config/passport');
 
 //var routes = require('./app_server/routes/index'); //comment out when you wanna test angular
 var routesApi = require('./app_api/routes/index');
@@ -28,6 +31,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //uncomment out when ready for angular
 app.use(express.static(path.join(__dirname, 'app_client'))); 
+
+app.use(passport.initialize());
 
 //app.use('/', routes); //comment out when you wanna test angular 
 app.use('/api', routesApi);
@@ -58,6 +63,16 @@ app.use(function(err, req, res, next) {
     // render the error page
     res.status(err.status || 500);
     res.render('error');
+});
+
+
+// error handlers
+// Catch unauthorised errors
+app.use(function (err, req, res, next) {
+if (err.name === 'UnauthorizedError') {
+res.status(401);
+res.json({"message" : err.name + ": " + err.message});
+}
 });
 
 module.exports = app;
