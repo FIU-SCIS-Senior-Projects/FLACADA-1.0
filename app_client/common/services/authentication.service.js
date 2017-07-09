@@ -5,8 +5,8 @@
     angular
         .module('flacadaApp')
         .service('authentication', authentication);
-    authentication.$inject = ['$window'];
-    function authentication($window) {
+    authentication.$inject = ['$window', '$http'];
+    function authentication($window, $http) {
 
         var saveToken = function (token) {
             $window.localStorage['flacada-token'] = token;

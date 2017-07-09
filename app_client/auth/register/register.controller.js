@@ -1,35 +1,27 @@
-/**
- * Created by ongoingbroom70 on 7/8/17.
- */
 (function () {
     angular
         .module('flacadaApp')
         .controller('registerCtrl', registerCtrl);
-
     registerCtrl.$inject = ['$location', 'authentication'];
     function registerCtrl($location, authentication) {
         var vm = this;
-
         vm.pageHeader = 'Create a new FLACADA account';
-
         vm.credentials = {
-            name : "",
-            email : "",
-            password : ""
+            name: "",
+            email: "",
+            password: ""
         };
-
         vm.returnPage = $location.search().page || '/';
-
         vm.onSubmit = function () {
             vm.formError = "";
-            if(!vm.credentials.name || !vm.credentials.email || !vm.credentials.password) {
-                vm.formError = "All fields are required! Please try again!";
+            if (!vm.credentials.name || !vm.credentials.email ||
+             !vm.credentials.password) {
+                vm.formError = "All fields required, please try again";
                 return false;
             } else {
                 vm.doRegister();
             }
         };
-
         vm.doRegister = function () {
             vm.formError = "";
             authentication
@@ -38,9 +30,9 @@
                     vm.formError = err;
                 })
                 .then(function () {
-                    $location.search('page',null);
+                    $location.search('page', null);
                     $location.path(vm.returnPage);
                 });
         };
     }
-}) ();
+})();

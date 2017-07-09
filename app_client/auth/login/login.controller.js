@@ -10,15 +10,15 @@
         vm.pageHeader = 'Sign in to your FLACADA account';
 
         vm.credentials = {
-            email : "",
-            password : ""
+            email: "",
+            password: ""
         };
 
         vm.returnPage = $location.search().page || '/';
 
         vm.onSubmit = function () {
             vm.formError = "";
-            if(!vm.credentials.email || !vm.credentials.password) {
+            if (!vm.credentials.email || !vm.credentials.password) {
                 vm.formError = "All fields are required! Please try again!";
                 return false;
             } else {
@@ -34,9 +34,9 @@
                     vm.formError = err;
                 })
                 .then(function () {
-                    $location.search('page',null);
+                    $location.search('page', null);
                     $location.path(vm.returnPage);
                 });
         };
     }
-}) ();
+})();
