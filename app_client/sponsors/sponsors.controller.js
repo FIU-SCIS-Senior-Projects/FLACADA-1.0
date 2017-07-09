@@ -4,11 +4,12 @@
         .module('flacadaApp')
         .controller('sponsorsCtrl', sponsorsCtrl);
 
-    sponsorsCtrl.$inject = ['$scope', 'flacadaData', '$uibModal'];
-    function sponsorsCtrl($scope, flacadaData, $uibModal) {
+    sponsorsCtrl.$inject = ['$scope', 'flacadaData', '$uibModal', 'authentication'];
+    function sponsorsCtrl($scope, flacadaData, $uibModal, authentication) {
         var vm = this;
         vm.pageHeader = 'Sponsors';
 
+        vm.isAdmin = authentication.isAdmin();
 
         flacadaData.sponsors()
             .success(function (data) {
