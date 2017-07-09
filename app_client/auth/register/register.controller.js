@@ -10,9 +10,7 @@
     function registerCtrl($location, authentication) {
         var vm = this;
 
-        vm.pageHeader = {
-            title: 'Create a new FLACADA account'
-        };
+        vm.pageHeader = 'Create a new FLACADA account';
 
         vm.credentials = {
             name : "",

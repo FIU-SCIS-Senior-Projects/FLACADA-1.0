@@ -7,9 +7,7 @@
     function loginCtrl($location, authentication) {
         var vm = this;
 
-        vm.pageHeader = {
-            title: 'Sign in to your FLACADA account'
-        };
+        vm.pageHeader = 'Sign in to your FLACADA account';
 
         vm.credentials = {
             email : "",
