@@ -4,11 +4,11 @@
         .module('flacadaApp')
         .controller('exhibitorsCtrl', exhibitorsCtrl);
 
-    exhibitorsCtrl.$inject = ['$scope', 'flacadaData', '$uibModal'];
-    function exhibitorsCtrl($scope, flacadaData, $uibModal) {
+    exhibitorsCtrl.$inject = ['$scope', 'flacadaData', '$uibModal', 'authentication'];
+    function exhibitorsCtrl($scope, flacadaData, $uibModal, authentication) {
         var vm = this;
         vm.pageHeader = 'Exhibitors';
-
+        vm.isAdmin = authentication.isAdmin();
 
         flacadaData.exhibitors()
             .success(function (data) {

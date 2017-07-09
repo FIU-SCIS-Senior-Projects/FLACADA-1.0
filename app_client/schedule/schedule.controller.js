@@ -4,11 +4,12 @@
         .module('flacadaApp')
         .controller('scheduleCtrl', scheduleCtrl);
 
-    scheduleCtrl.$inject = ['$scope', 'flacadaData'];
-    function scheduleCtrl($scope, flacadaData) {
+    scheduleCtrl.$inject = ['$scope', 'flacadaData', 'authentication'];
+    function scheduleCtrl($scope, flacadaData, authentication) {
         var vm = this;
         vm.pageHeader = 'Schedule';
-
+        vm.isAdmin = authentication.isAdmin();
+        vm.isLoggedIn = authentication.isLoggedIn();
 
         flacadaData.sessions()
             .success(function (data) {
