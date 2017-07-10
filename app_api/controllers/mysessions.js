@@ -14,10 +14,10 @@ module.exports.getMySessions = function (req, res) {
 
     console.log("Finding my sessions");
     console.log(req.payload._id);
-    var userId = req.payload._id;
+    var userid = req.payload._id;
     MySessions
         .findOne({
-            postedBy: userId
+            postedBy: userid
         })
         .populate('postedBy sessions')
         .exec(function (err, mysession) {
@@ -36,9 +36,11 @@ module.exports.getMySessions = function (req, res) {
 /* POST /mysessions/sessionid */
 module.exports.addMySession = function (req, res) {
     var userid = req.payload._id;
-    var sessionid = req.params.sessionid
-    console.log("sessionid " + sessionid)
-    console.log(userid);
+    var sessionid = req.params.sessionid;
+    var time = req.body.startTime;
+    var compareDate = new Date(time)
+
+
     MySessions
         .findOneAndUpdate({
             postedBy: userid
@@ -55,9 +57,12 @@ module.exports.addMySession = function (req, res) {
                 sendJSONresponse(res, 404, err);
                 return;
             }
-            console.log(mysession);
+
+            //console.log(mysession);
             sendJSONresponse(res, 200, mysession);
-        });
+        }
+
+        );
 };
 
 
@@ -74,7 +79,7 @@ module.exports.deleteMySessions = function (req, res) {
                 sendJSONresponse(res, 404, err);
                 return;
             }
-            console.log(session);
+            console.log(mysession);
             sendJSONresponse(res, 200, mysession);
         });
 }
@@ -84,7 +89,7 @@ module.exports.deleteOneSpeaker = function (req, res) {
 
     var userid = req.payload._id;
 
-    Favorites.findOneAndUpdate({
+    MySessions.findOneAndUpdate({
         postedBy: userid
     }, {
             $pull: {
@@ -98,7 +103,7 @@ module.exports.deleteOneSpeaker = function (req, res) {
                 sendJSONresponse(res, 404, err);
                 return;
             }
-            console.log(session);
+            console.log(mysession);
             sendJSONresponse(res, 200, mysession);
         });
 };

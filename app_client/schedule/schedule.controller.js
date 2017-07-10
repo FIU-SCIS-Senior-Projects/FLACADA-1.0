@@ -10,6 +10,7 @@
         vm.pageHeader = 'Schedule';
         vm.isAdmin = authentication.isAdmin();
         vm.isLoggedIn = authentication.isLoggedIn();
+        
 
         flacadaData.sessions()
             .success(function (data) {
@@ -30,13 +31,15 @@
                     console.log(e);
                 });
         };
+
+
         vm.addMySession = function (sessionid) {
             flacadaData.addMySession(sessionid)
                 .success(function (response) {
-                    console.log(response.data);
+                    //console.log(response.data);
                 })
                 .error(function (e) {
-                    console.log(e);
+                   vm.formError = e;
                 });
 
         }

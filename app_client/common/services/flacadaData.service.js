@@ -47,7 +47,7 @@
         };
 
         var deleteSponsor = function (sponsorid) {
-            return $http.delete('/api/sponsors/' + sponsorid, null, {
+            return $http.delete('/api/sponsors/' + sponsorid, {
                 headers: {
                     Authorization: 'Bearer ' + authentication.getToken()
                 }
@@ -55,7 +55,7 @@
         };
 
         var deleteExhibitor = function (exhibitorid) {
-            return $http.delete('/api/exhibitors/' + exhibitorid, null, {
+            return $http.delete('/api/exhibitors/' + exhibitorid,{
                 headers: {
                     Authorization: 'Bearer ' + authentication.getToken()
                 }
