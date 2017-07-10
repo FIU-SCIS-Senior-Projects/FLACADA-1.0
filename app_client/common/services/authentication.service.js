@@ -1,78 +1,79 @@
-/**
- * Created by ongoingbroom70 on 7/8/17.
- */
 (function () {
-    angular
-        .module('flacadaApp')
-        .service('authentication', authentication);
-    authentication.$inject = ['$window', '$http'];
-    function authentication($window, $http) {
 
-        var saveToken = function (token) {
-            $window.localStorage['flacada-token'] = token;
-        };
+  angular
+    .module('flacadaApp')
+    .service('authentication', authentication);
 
-        var getToken = function () {
-            return $window.localStorage['flacada-token'];
-        };
+  authentication.$inject = ['$http', '$window'];
+  function authentication($http, $window) {
 
-        register = (function (user) {
-            return $http.post('/api/register', user).success(function (data) {
-                saveToken(data.token);
-            });
-        });
+    var saveToken = function (token) {
+      $window.localStorage['flacada-token'] = token;
+    };
 
-        login = function (user) {
-            return $http.post('/api/login', user).success(function (data) {
-                saveToken(data.token);
-            })
-        };
+    var getToken = function () {
+      return $window.localStorage['flacada-token'];
+    };
 
-        logout = function () {
-            $window.localStorage.removeItem('flacada-token');
-        };
+    var isLoggedIn = function () {
+      var token = getToken();
 
-        var isLoggedIn = function () {
-            var token = getToken();
+      if (token) {
+        var payload = JSON.parse($window.atob(token.split('.')[1]));
 
-            if(token) {
-                var payload = JSON.parse($window.atob(token.split('.')[1]));
+        return payload.exp > Date.now() / 1000;
+      } else {
+        return false;
+      }
+    };
 
-                return payload.exp > Date.now() / 1000;
-            } else {
-                return false;
-            }
-        };
-
-        var currentUser = function () {
-            if(isLoggedIn()) {
-                var token = getToken();
-                var payload = JSON.parse($window.atob(token.split('.')[1]));
-                return {
-                    email : payload.email,
-                    name : payload.name
-                };
-            }
-         };
-
-        var isAdmin = function () {
-            if(isLoggedIn()) {
-                var token = getToken();
-                var payload = JSON.parse($window.atob(token.split('.')[1]));
-                if(payload.admin) {return true}
-                else {return false};
-            }
-         };
-
+    var currentUser = function () {
+      if (isLoggedIn()) {
+        var token = getToken();
+        var payload = JSON.parse($window.atob(token.split('.')[1]));
         return {
-            saveToken : saveToken,
-            getToken : getToken,
-            register : register,
-            logout : logout,
-            login : login,
-            isLoggedIn : isLoggedIn,
-            currentUser : currentUser,
-            isAdmin : isAdmin,
-        }
-    }
-}) ();
+          email: payload.email,
+          name: payload.name
+        };
+      }
+    };
+
+    var isAdmin = function () {
+      if (isLoggedIn()) {
+        var token = getToken();
+        var payload = JSON.parse($window.atob(token.split('.')[1]));
+        if(payload.admin){return true}
+        else {return false};
+      }
+    };
+
+    register = function (user) {
+      return $http.post('/api/register', user).success(function (data) {
+        saveToken(data.token);
+      });
+    };
+
+    login = function (user) {
+      return $http.post('/api/login', user).success(function (data) {
+        saveToken(data.token);
+      });
+    };
+
+    logout = function () {
+      $window.localStorage.removeItem('flacada-token');
+    };
+
+    return {
+      currentUser: currentUser,
+      saveToken: saveToken,
+      getToken: getToken,
+      isLoggedIn: isLoggedIn,
+      register: register,
+      login: login,
+      logout: logout,
+      isAdmin : isAdmin,
+    };
+  }
+
+
+})();
