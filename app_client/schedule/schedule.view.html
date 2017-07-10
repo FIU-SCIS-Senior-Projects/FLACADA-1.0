@@ -7,17 +7,17 @@
         <div class="col-xs-12 col-md-7">
             <div class="row">
                 <div class="col-xs-12 col-sm-8">
-                    <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+                    <div role="alert" ng-show="vm.message" class="alert alert-danger">{{ vm.message }}</div>
                     <div class="panel panel-primary">
                         <div class="panel-heading"></div>
-                        <div class="panel-body" ng-repeat="session in vm.data.sessions">
+                        <div class="panel-body" ng-repeat="session in vm.data.sessions | orderBy: 'startTime'">
                             <div class="row">
-                                <div class="col-xs-3"><span class="glyphicon glyphicon-calendar"></span></div>
-                                <div class="col-xs-9">
+                                <div class="col-xs-12"><span class="glyphicon glyphicon-calendar"></span></div>
+                                <div class="col-xs-12">
                                     <a ng-href="/schedule/{{ session._id }}">{{ session.name }}</a>
                                     <div ng-if="vm.isAdmin" ng-click="vm.delete(session._id)" class="btn btn-success pull-right">delete </div>
                                     <div ng-click="vm.addMySession(session._id)" class="btn btn-success pull-right">add to my schedule </div>
-                                    <p class="sessionStartTime">{{ session.startTime | date : 'MMMM d, y h:mm a ' : 'UTC' }} - {{ session.endTime | date
+                                    <p class="sessionStartTime">{{ session.startTime | date : 'MMMM d, y h:mm a ' : 'UTC'  }} - {{ session.endTime | date
                                         : 'h:mm a' : 'UTC'}}
                                     </p>
                                     <p> {{session.location}} </p>

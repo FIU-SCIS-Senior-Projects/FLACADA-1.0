@@ -31,7 +31,7 @@
             return $http.get('/api/sessions/' + sessionid);
         };
         var deleteSession = function (sessionid) {
-            return $http.delete('/api/sessions/' + sessionid,  {
+            return $http.delete('/api/sessions/' + sessionid, {
                 headers: {
                     Authorization: 'Bearer ' + authentication.getToken()
                 }
@@ -55,7 +55,7 @@
         };
 
         var deleteExhibitor = function (exhibitorid) {
-            return $http.delete('/api/exhibitors/' + exhibitorid,{
+            return $http.delete('/api/exhibitors/' + exhibitorid, {
                 headers: {
                     Authorization: 'Bearer ' + authentication.getToken()
                 }
@@ -109,12 +109,20 @@
             });
         };
 
-        var deleteMySessions = function () {
-            return $http.delete('/api/mysessions');
+        var deleteAllSessions = function () {
+            return $http.delete('/api/mysessions', {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
         };
 
-        var deleteMySession =  function(sessionid){
-            return $http.delete('/api/mysessions/' + sessionid);
+        var deleteMySession = function (sessionid) {
+            return $http.delete('/api/mysessions/' + sessionid,  {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
         };
 
         return {
@@ -134,10 +142,10 @@
             addExhibitor: addExhibitor,
             addSession: addSession,
             addSpeaker: addSpeaker,
-            getMySessions : getMySessions,
-            addMySession : addMySession,
-            deleteMySessions : deleteMySessions,
-            deleteMySession : deleteMySession,
+            getMySessions: getMySessions,
+            addMySession: addMySession,
+            deleteAllSessions: deleteAllSessions,
+            deleteMySession: deleteMySession,
         };
     }
 
