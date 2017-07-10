@@ -30,6 +30,16 @@
                     console.log(e);
                 });
         };
+        vm.addMySession = function (sessionid) {
+            flacadaData.addMySession(sessionid)
+                .success(function (response) {
+                    console.log(response.data);
+                })
+                .error(function (e) {
+                    console.log(e);
+                });
+
+        }
 
     };
 

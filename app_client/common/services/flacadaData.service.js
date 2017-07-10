@@ -31,7 +31,7 @@
             return $http.get('/api/sessions/' + sessionid);
         };
         var deleteSession = function (sessionid) {
-            return $http.delete('/api/sessions/' + sessionid, {
+            return $http.delete('/api/sessions/' + sessionid, null, {
                 headers: {
                     Authorization: 'Bearer ' + authentication.getToken()
                 }
@@ -39,7 +39,7 @@
         };
 
         var deleteSpeaker = function (speakerid) {
-            return $http.delete('/api/speakers/' + speakerid, {
+            return $http.delete('/api/speakers/' + speakerid, null, {
                 headers: {
                     Authorization: 'Bearer ' + authentication.getToken()
                 }
@@ -47,7 +47,7 @@
         };
 
         var deleteSponsor = function (sponsorid) {
-            return $http.delete('/api/sponsors/' + sponsorid, {
+            return $http.delete('/api/sponsors/' + sponsorid, null, {
                 headers: {
                     Authorization: 'Bearer ' + authentication.getToken()
                 }
@@ -55,7 +55,7 @@
         };
 
         var deleteExhibitor = function (exhibitorid) {
-            return $http.delete('/api/exhibitors/' + exhibitorid, {
+            return $http.delete('/api/exhibitors/' + exhibitorid, null, {
                 headers: {
                     Authorization: 'Bearer ' + authentication.getToken()
                 }
@@ -94,11 +94,19 @@
             });
         };
         var getMySessions = function () {
-            return $http.get('/api/mysessions');
+            return $http.get('/api/mysessions', {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
         };
 
-        var addMySession = function () {
-            return $http.post('/api/mysessions');
+        var addMySession = function (sessionid) {
+            return $http.post('/api/mysessions/' + sessionid, null, {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
         };
 
         var deleteMySessions = function () {

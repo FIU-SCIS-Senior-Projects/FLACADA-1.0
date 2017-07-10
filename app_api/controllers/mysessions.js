@@ -26,22 +26,25 @@ module.exports.getMySessions = function (req, res) {
                 sendJSONresponse(res, 404, err);
                 return;
             }
-            console.log(session);
+            console.log(mysession);
             sendJSONresponse(res, 200, mysession);
         });
 
 };
 
 
-/* POST /mysessions */
+/* POST /mysessions/sessionid */
 module.exports.addMySession = function (req, res) {
-    var userId = req.payload._id;
+    var userid = req.payload._id;
+    var sessionid = req.params.sessionid
+    console.log("sessionid " + sessionid)
+    console.log(userid);
     MySessions
         .findOneAndUpdate({
-            postedBy: userId
+            postedBy: userid
         }, {
             $addToSet: {
-                sessions: req.body
+                sessions: sessionid
             }
         }, {
             upsert: true,
@@ -52,7 +55,7 @@ module.exports.addMySession = function (req, res) {
                 sendJSONresponse(res, 404, err);
                 return;
             }
-            console.log(session);
+            console.log(mysession);
             sendJSONresponse(res, 200, mysession);
         });
 };
@@ -60,11 +63,11 @@ module.exports.addMySession = function (req, res) {
 
 /** DELETE /mysessions */
 module.exports.deleteMySessions = function (req, res) {
-    var userId = req.payload._id;
+    var userid = req.payload._id;
 
     MySessions
         .findOneAndRemove({
-            postedBy: userId
+            postedBy: userid
         }, function (err, mysession) {
             if (err) {
                 console.log(err);
@@ -79,13 +82,13 @@ module.exports.deleteMySessions = function (req, res) {
 /** DELETE /mysessions/:sessionid */
 module.exports.deleteOneSpeaker = function (req, res) {
 
-    var userId = req.payload._id;
+    var userid = req.payload._id;
 
     Favorites.findOneAndUpdate({
-        postedBy: userId
+        postedBy: userid
     }, {
             $pull: {
-                sessions: req.params.sessionId
+                sessions: req.params.sessionid
             }
         }, {
             new: true
