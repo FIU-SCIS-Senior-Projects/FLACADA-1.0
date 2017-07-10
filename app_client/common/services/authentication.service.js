@@ -5,7 +5,7 @@
     .service('authentication', authentication);
 
   authentication.$inject = ['$http', '$window'];
-  function authentication ($http, $window) {
+  function authentication($http, $window) {
 
     var saveToken = function (token) {
       $window.localStorage['flacada-token'] = token;
@@ -15,10 +15,10 @@
       return $window.localStorage['flacada-token'];
     };
 
-    var isLoggedIn = function() {
+    var isLoggedIn = function () {
       var token = getToken();
 
-      if(token){
+      if (token) {
         var payload = JSON.parse($window.atob(token.split('.')[1]));
 
         return payload.exp > Date.now() / 1000;
@@ -27,41 +27,51 @@
       }
     };
 
-    var currentUser = function() {
-      if(isLoggedIn()){
+    var currentUser = function () {
+      if (isLoggedIn()) {
         var token = getToken();
         var payload = JSON.parse($window.atob(token.split('.')[1]));
         return {
-          email : payload.email,
-          name : payload.name
+          email: payload.email,
+          name: payload.name
         };
       }
     };
 
-    register = function(user) {
-      return $http.post('/api/register', user).success(function(data){
+    var isAdmin = function () {
+      if (isLoggedIn()) {
+        var token = getToken();
+        var payload = JSON.parse($window.atob(token.split('.')[1]));
+        if(payload.admin){return true}
+        else {return false};
+      }
+    };
+
+    register = function (user) {
+      return $http.post('/api/register', user).success(function (data) {
         saveToken(data.token);
       });
     };
 
-    login = function(user) {
-      return $http.post('/api/login', user).success(function(data) {
+    login = function (user) {
+      return $http.post('/api/login', user).success(function (data) {
         saveToken(data.token);
       });
     };
 
-    logout = function() {
+    logout = function () {
       $window.localStorage.removeItem('flacada-token');
     };
 
     return {
-      currentUser : currentUser,
-      saveToken : saveToken,
-      getToken : getToken,
-      isLoggedIn : isLoggedIn,
-      register : register,
-      login : login,
-      logout : logout
+      currentUser: currentUser,
+      saveToken: saveToken,
+      getToken: getToken,
+      isLoggedIn: isLoggedIn,
+      register: register,
+      login: login,
+      logout: logout,
+      isAdmin : isAdmin,
     };
   }
 

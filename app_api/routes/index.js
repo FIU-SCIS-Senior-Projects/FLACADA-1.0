@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var jwt = require('express-jwt');
 var auth = jwt({
-secret: process.env.JWT_SECRET,
-userProperty: 'payload'
+    secret: process.env.JWT_SECRET,
+    userProperty: 'payload'
 });
 
 var ctrlExhibitor = require('../controllers/exhibitors');
@@ -11,17 +11,18 @@ var ctrlSponsor = require('../controllers/sponsors');
 var ctrlSession = require('../controllers/sessions');
 var ctrlSpeaker = require('../controllers/speakers');
 var ctrlAuth = require('../controllers/authentication');
+var ctrlMySession = require('../controllers/mysessions');
 
 /* Exhibitors */
 router.get('/exhibitors', ctrlExhibitor.getExhibitors);
-router.post('/exhibitors', auth, ctrlExhibitor.createExhibitor);
-router.delete('/exhibitors', auth, ctrlExhibitor.deleteExhibitors);
+router.post('/exhibitors',auth, ctrlExhibitor.createExhibitor);
+router.delete('/exhibitors',auth, ctrlExhibitor.deleteExhibitors);
 router.get('/exhibitors/:exhibitorid', ctrlExhibitor.getOneExhibitor);
 router.delete('/exhibitors/:exhibitorid', auth, ctrlExhibitor.deleteOneExhibitor);
 
-/* Sponsors */ 
+/* Sponsors */
 router.get('/sponsors', ctrlSponsor.getSponsors);
-router.post('/sponsors', auth,  ctrlSponsor.createSponsor);
+router.post('/sponsors', auth, ctrlSponsor.createSponsor);
 router.delete('/sponsors', auth, ctrlSponsor.deleteSponsors);
 router.get('/sponsors/:sponsorid', ctrlSponsor.getOneSponsor);
 router.delete('/sponsors/:sponsorid', auth, ctrlSponsor.deleteOneSponsor);
@@ -45,5 +46,10 @@ router.post('/speakers/:speakerid/sessions', auth, ctrlSpeaker.createSpeakerSess
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
+//my sesssions
+router.get('/mysessions', auth, ctrlMySession.getMySessions);
+router.post('/mysessions', auth, ctrlMySession.addMySession);
+router.delete('/mysessions', auth, ctrlMySession.deleteMySessions);
+router.delete('/mysessions/:sessionid', auth, ctrlMySession.deleteOneSpeaker);
 
 module.exports = router;

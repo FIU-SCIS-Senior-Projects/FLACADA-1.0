@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Exhibitors = mongoose.model('Exhibitor');
+var User = mongoose.model('User');
 
 var sendJSONresponse = function(res, status, content) {
   res.status(status);
