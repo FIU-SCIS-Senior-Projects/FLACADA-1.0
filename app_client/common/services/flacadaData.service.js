@@ -31,7 +31,7 @@
             return $http.get('/api/sessions/' + sessionid);
         };
         var deleteSession = function (sessionid) {
-            return $http.delete('/api/sessions/' + sessionid, null, {
+            return $http.delete('/api/sessions/' + sessionid,  {
                 headers: {
                     Authorization: 'Bearer ' + authentication.getToken()
                 }

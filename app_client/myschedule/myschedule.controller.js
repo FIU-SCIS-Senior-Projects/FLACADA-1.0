@@ -13,7 +13,7 @@
 
         flacadaData.getMySessions()
             .success(function (data) {
-                vm.data = { sessions: data };
+                vm.data = { mysessions: data };
                 console.log(vm.data);
             })
             .error(function (e) {
