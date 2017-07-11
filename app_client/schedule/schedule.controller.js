@@ -10,7 +10,6 @@
         vm.pageHeader = 'Schedule';
         vm.isAdmin = authentication.isAdmin();
         vm.isLoggedIn = authentication.isLoggedIn();
-        vm.sessionid - $routeParams.sessionid;
         vm.currentPath = $location.path();
 
 
