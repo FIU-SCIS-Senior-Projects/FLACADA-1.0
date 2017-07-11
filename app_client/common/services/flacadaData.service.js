@@ -93,6 +93,21 @@
                 }
             });
         };
+        var getMySessions = function () {
+            return $http.get('/api/mysessions');
+        };
+
+        var addMySession = function () {
+            return $http.post('/api/mysessions');
+        };
+
+        var deleteMySessions = function () {
+            return $http.delete('/api/mysessions');
+        };
+
+        var deleteMySession =  function(sessionid){
+            return $http.delete('/api/mysessions/' + sessionid);
+        };
 
         return {
             sponsors: sponsors,
@@ -105,12 +120,16 @@
             sessionDetails: sessionDetails,
             deleteSession: deleteSession,
             deleteSpeaker: deleteSpeaker,
-            deleteSponsor : deleteSponsor,
-            deleteExhibitor : deleteExhibitor,
+            deleteSponsor: deleteSponsor,
+            deleteExhibitor: deleteExhibitor,
             addSponsor: addSponsor,
             addExhibitor: addExhibitor,
             addSession: addSession,
             addSpeaker: addSpeaker,
+            getMySessions : getMySessions,
+            addMySession : addMySession,
+            deleteMySessions : deleteMySessions,
+            deleteMySession : deleteMySession,
         };
     }
 

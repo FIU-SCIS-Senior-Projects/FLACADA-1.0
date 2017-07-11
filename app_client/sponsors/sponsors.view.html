@@ -16,14 +16,15 @@
                                 </div>
                                 <div class="col-xs-8">
                                     <a href="/sponsor/{{ sponsor._id }}">{{ sponsor.name }}</a>
+                                    <div ng-if="vm.isAdmin" ng-click="vm.delete(session._id)" class="btn btn-danger pull-right">delete </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
-                    <a ng-if="vm.isAdmin" ng-click="vm.popupSponsorForm()" class="btn btn-success pull-right">+</a>
-                    <a ng-if="vm.isAdmin"class="btn btn-danger pull-right">-</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.popupExhibitorForm()" class="btn btn-success pull-right">Add Sponsor</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.popupExhibitorForm()" class="btn btn-danger pull-right">Delete All Sponsors</a>
                 </div>
             </div>
         </div>

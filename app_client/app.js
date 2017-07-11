@@ -55,6 +55,11 @@
                 controller: 'scheduleDetailCtrl',
                 controllerAs: 'vm'
             })
+            // .when('/mysessions', {
+            //     templateUrl: '/myschedule/myschedule.view.html',
+            //     controller: 'myscheduleCtrl',
+            //     controllerAs: 'vm'
+            // })
             .when('/register', {
                 templateUrl: '/auth/register/register.view.html',
                 controller: 'registerCtrl',
