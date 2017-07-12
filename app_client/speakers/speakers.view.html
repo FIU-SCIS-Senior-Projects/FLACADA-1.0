@@ -16,8 +16,8 @@
                             </div>
                             <div class="col-xs-8">
                                 <a ng-href="/speaker/{{ speaker._id }}">{{ speaker.firstName }} {{speaker.lastName}}</a>
-                                <div ng-if="vm.isAdmin" ng-click="vm.delete(session._id)" class="btn btn-danger pull-right">delete</div>
-                                <div ng-if="vm.isAdmin" ng-click="vm.delete(session._id)" class="btn btn-success pull-right">+Session</div>
+                                <div ng-if="vm.isAdmin" ng-click="vm.delete(speaker._id)" class="btn btn-danger pull-right">delete</div>
+                                <div ng-if="vm.isAdmin" ng-click="vm.addSessionForm(speaker._id)" class="btn btn-success pull-right">+Session</div>
                                 <p> {{speaker.title}} </p>
                                 <p>{{speaker.institution}}</p>
                             </div>
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="col-xs-12"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
-            <a ng-if="vm.isAdmin" ng-click="vm.popupExhibitorForm()" class="btn btn-danger pull-right">Delete All Speakerss</a>
+            <a ng-if="vm.isAdmin" ng-click="vm.deleteAll()" class="btn btn-danger pull-right">Delete All Speakerss</a>
             </div>
         </div>
     </div>

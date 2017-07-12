@@ -4,7 +4,7 @@
         .module('flacadaApp')
         .controller('scheduleCtrl', scheduleCtrl);
 
-    scheduleCtrl.$inject = [ '$location','flacadaData', 'authentication','$uibModal', ];
+    scheduleCtrl.$inject = [ '$location','flacadaData', 'authentication','$uibModal' ];
     function scheduleCtrl( $location,flacadaData, authentication, $uibModal) {
         var vm = this;
         vm.pageHeader = 'Schedule';
@@ -36,7 +36,6 @@
                 }
             })
 
-            // TODO: SPEAKER.SESSIONS OR SESSION.SPEAKER TRIED BOTH
             uibModal.result.then(function (data) {
                 vm.data.speaker.sessions.push(data);
             })
@@ -52,6 +51,17 @@
                     console.log(e);
                 });
         };
+
+        vm.deleteAll = function () {
+            flacadaData.deleteAllSessions () 
+                .success(function (response) {
+                    console.log(response.data);
+                })
+                .error(function (e) {
+                    console.log(e);
+                });
+            }
+        
 
     };
 

@@ -4,11 +4,13 @@
         .module('flacadaApp')
         .controller('exhibitorsCtrl', exhibitorsCtrl);
 
-    exhibitorsCtrl.$inject = ['$scope', 'flacadaData', '$uibModal', 'authentication'];
-    function exhibitorsCtrl($scope, flacadaData, $uibModal, authentication) {
+    exhibitorsCtrl.$inject = ['$location', '$scope', 'flacadaData', '$uibModal', 'authentication'];
+    function exhibitorsCtrl($location, $scope, flacadaData, $uibModal, authentication) {
         var vm = this;
         vm.pageHeader = 'Exhibitors';
         vm.isAdmin = authentication.isAdmin();
+        vm.isLoggedIn = authentication.isLoggedIn();
+        vm.currentPath = $location.path();
 
         flacadaData.exhibitors()
             .success(function (data) {
@@ -29,6 +31,27 @@
                 vm.data.exhibitors.push(data);
             })
         }
+
+        vm.delete = function (exhibitorid) {
+            console.log(exhibitorid);
+            flacadaData.deleteExhibitor(exhibitorid)
+                .success(function (response) {
+                    console.log(response.data);
+                })
+                .error(function (e) {
+                    console.log(e);
+                });
+        };
+
+        vm.deleteAll = function () {
+            flacadaData.deleteAllExhibitors () 
+                .success(function (response) {
+                    console.log(response.data);
+                })
+                .error(function (e) {
+                    console.log(e);
+                });
+            }
 
     }
 

@@ -1,4 +1,4 @@
-
+(function () {
     angular
         .module('flacadaApp')
         .controller('speakerModalCtrl', speakerModalCtrl);

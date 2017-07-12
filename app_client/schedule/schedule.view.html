@@ -31,8 +31,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
-                    <a ng-if="vm.isAdmin" href="/schedule/speaker/new/" class="btn btn-success pull-right">+</a>
-                    <a ng-if="vm.isAdmin" class="btn btn-danger pull-right">-
+                    <a ng-if="vm.isAdmin" ng-click="vm.deleteAll()" class="btn btn-danger pull-right">Delete All Sessions</a>
           <!--TODO: linking to the according exhibitors-info--></a></div>
                 </div>
             </div>

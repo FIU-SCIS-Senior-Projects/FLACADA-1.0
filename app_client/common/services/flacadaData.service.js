@@ -109,6 +109,38 @@
             return $http.delete('/api/mysessions/' + sessionid);
         };
 
+        var deleteAllExhibitors = function (){
+            return $http.delete('/api/exhibitors', {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
+        };
+
+        var deleteAllSponsors = function (){
+            return $http.delete('/api/sponsors', {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
+        };
+
+        var deleteAllSpeakers = function (){
+            return $http.delete('/api/speakers', {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
+        };
+
+        var deleteAllSessions = function (){
+            return $http.delete('/api/sessions', {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
+        };
+
         return {
             sponsors: sponsors,
             sponsorDetails: sponsorDetails,
@@ -130,6 +162,10 @@
             addMySession : addMySession,
             deleteMySessions : deleteMySessions,
             deleteMySession : deleteMySession,
+            deleteAllExhibitors : deleteAllExhibitors,
+            deleteAllSponsors : deleteAllSponsors,
+            deleteAllSpeakers : deleteAllSpeakers, 
+            deleteAllSessions : deleteAllSessions
         };
     }
 
