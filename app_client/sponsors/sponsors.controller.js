@@ -4,10 +4,13 @@
         .module('flacadaApp')
         .controller('sponsorsCtrl', sponsorsCtrl);
 
-    sponsorsCtrl.$inject = ['$scope', 'flacadaData', '$uibModal', 'authentication'];
-    function sponsorsCtrl($scope, flacadaData, $uibModal, authentication) {
+    sponsorsCtrl.$inject = ['$location', '$scope', 'flacadaData', '$uibModal', 'authentication'];
+    function sponsorsCtrl($location, $scope, flacadaData, $uibModal, authentication) {
         var vm = this;
         vm.pageHeader = 'Sponsors';
+        vm.isAdmin = authentication.isAdmin();
+        vm.isLoggedIn = authentication.isLoggedIn();
+        vm.currentPath = $location.path();
 
         flacadaData.sponsors()
             .success(function (data) {
@@ -28,7 +31,30 @@
                 vm.data.sponsors.push(data);
             })
         }
-        vm.isAdmin = authentication.isAdmin();
+
+        vm.delete = function (sponsorid) {
+            console.log(sponsorid);
+            flacadaData.deleteSponsor(sponsorid)
+                .success(function (response) {
+                    console.log(response.data);
+                })
+                .error(function (e) {
+                    console.log(e);
+                });
+        };
+
+        vm.deleteAll = function () {
+            flacadaData.deleteAllSponsors () 
+                .success(function (response) {
+                    console.log(response.data);
+                })
+                .error(function (e) {
+                    console.log(e);
+                });
+            }
+        
+        
+        
     }
 
 })();

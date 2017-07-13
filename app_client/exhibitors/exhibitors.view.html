@@ -4,7 +4,7 @@
     <icon></icon>
     <page-header content="vm.pageHeader"></page-header>
     <div class="row">
-        <div class="col-xs-12 col-md-4">
+        <div class="col-xs-12 col-md-6">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="panel panel-primary">
@@ -16,14 +16,15 @@
                                 </div>
                                 <div class="col-xs-8">
                                     <a href="/exhibitor/{{ exhibitor._id }}">{{ exhibitor.name }}</a>
+                                     <div ng-if="vm.isAdmin" ng-click="vm.delete(exhibitor._id)" class="btn btn-danger pull-right">delete </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
-                    <a ng-if="vm.isAdmin" ng-click="vm.popupExhibitorForm()" class="btn btn-success pull-right">+</a>
-                    <a ng-if="vm.isAdmin" class="btn btn-danger pull-right">-</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.popupExhibitorForm()" class="btn btn-success pull-right">Add Exhibitor</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.deleteAll()" class="btn btn-danger pull-right">Delete All Exhibitors</a>
                 </div>
             </div>
         </div>

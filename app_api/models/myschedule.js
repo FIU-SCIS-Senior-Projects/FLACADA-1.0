@@ -19,5 +19,5 @@ var myScheduleSchema = new Schema({
 });
 
 
-mongoose.model('Schedule', myScheduleSchema);
+mongoose.model('MySchedule', myScheduleSchema);
 

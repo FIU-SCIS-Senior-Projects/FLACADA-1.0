@@ -1,0 +1,45 @@
+<div class="modal-content">
+    <form id="addExhibitor" name="addSpeaker" role="form" ng-submit="vm.onSubmit()" class="form-horizontal">
+        <div class="modal-header">
+            <button type="button" ng-click="vm.modal.cancel()" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 id="myModalLabel" class="modal-title">ADD A SESSION</h4>
+        </div>
+        <div class="modal-body">
+            <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                    <textarea id="name" name="name" rows="1" required="required" ng-model="vm.formData.name" class="form-control"></textarea>
+                </div>
+            </div>
+                <div class="form-group">
+                    <label for="startTime" class="col-sm-2 control-label">Start</label>
+                    <div class="col-sm-10">
+                        <input type="datetime-local" id="startTime" name="startTime" ng-model="vm.formData.startTime" placeholder="yyyy-MM-ddTHH:mm:ss" min="2017-01-01T00:00:00" max="2020-01-01T00:00:00" required />
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label for="endTime" class="col-sm-2 control-label">End</label>
+                    <div class="col-sm-10">
+                        <input type="datetime-local" id="endTime" name="endTime" ng-model="vm.formData.endTime" placeholder="yyyy-MM-ddTHH:mm:ss" min="2017-01-01T00:00:00" max="2020-01-01T00:00:00" required />
+                    </div>
+                </div>
+            <div class="form-group">
+                <label for="location" class="col-sm-2 control-label">Location</label>
+                <div class="col-sm-10">
+                    <textarea id="location" name="location" rows="1" required="required" ng-model="vm.formData.location" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description" class="col-sm-2 control-label">Description</label>
+                <div class="col-sm-10">
+                    <textarea id="description" name="description" rows="1" required="required" ng-model="vm.formData.description" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button ng-click="vm.modal.cancel()" type="button" class="btn btn-default">Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
