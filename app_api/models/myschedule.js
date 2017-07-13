@@ -14,8 +14,6 @@ var myScheduleSchema = new Schema({
       ref: 'Session'
     }
   ]
-}, {
-  timestamps: true
 });
 
 

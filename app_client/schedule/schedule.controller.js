@@ -10,8 +10,8 @@
         vm.pageHeader = 'Schedule';
         vm.isAdmin = authentication.isAdmin();
         vm.isLoggedIn = authentication.isLoggedIn();
-        vm.currentPath = $location.path();
-
+        vm.message = ""
+        
 
         flacadaData.sessions()
             .success(function (data) {
@@ -46,6 +46,7 @@
             flacadaData.deleteSession(sessionid)
                 .success(function (response) {
                     console.log(response.data);
+                    $window.location.reload();
                 })
                 .error(function (e) {
                     console.log(e);
@@ -56,6 +57,7 @@
             flacadaData.deleteAllSessions () 
                 .success(function (response) {
                     console.log(response.data);
+                    vm.message = "Successfully added to my schedule!"
                 })
                 .error(function (e) {
                     console.log(e);

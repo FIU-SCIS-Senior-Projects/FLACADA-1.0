@@ -39,7 +39,7 @@
         };
 
         var deleteSpeaker = function (speakerid) {
-            return $http.delete('/api/speakers/' + speakerid, {
+            return $http.delete('/api/speakers/' + speakerid, null, {
                 headers: {
                     Authorization: 'Bearer ' + authentication.getToken()
                 }
@@ -94,19 +94,35 @@
             });
         };
         var getMySessions = function () {
-            return $http.get('/api/mysessions');
+            return $http.get('/api/mysessions', {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
         };
 
-        var addMySession = function () {
-            return $http.post('/api/mysessions');
+        var addMySession = function (sessionid) {
+            return $http.post('/api/mysessions/' + sessionid, null, {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
         };
 
-        var deleteMySessions = function () {
-            return $http.delete('/api/mysessions');
+        var deleteAllSessions = function () {
+            return $http.delete('/api/mysessions', {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
         };
 
-        var deleteMySession =  function(sessionid){
-            return $http.delete('/api/mysessions/' + sessionid);
+        var deleteMySession = function (sessionid) {
+            return $http.delete('/api/mysessions/' + sessionid,  {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
         };
 
         var deleteAllExhibitors = function (){
@@ -165,7 +181,11 @@
             deleteAllExhibitors : deleteAllExhibitors,
             deleteAllSponsors : deleteAllSponsors,
             deleteAllSpeakers : deleteAllSpeakers, 
-            deleteAllSessions : deleteAllSessions
+            deleteAllSessions : deleteAllSessions,
+            getMySessions: getMySessions,
+            addMySession: addMySession,
+            deleteAllSessions: deleteAllSessions,
+            deleteMySession: deleteMySession,
         };
     }
 

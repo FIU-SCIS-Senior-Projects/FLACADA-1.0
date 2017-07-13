@@ -14,10 +14,10 @@ module.exports.getMySessions = function (req, res) {
 
     console.log("Finding my sessions");
     console.log(req.payload._id);
-    var userId = req.payload._id;
+    var userid = req.payload._id;
     MySessions
         .findOne({
-            postedBy: userId
+            postedBy: userid
         })
         .populate('postedBy sessions')
         .exec(function (err, mysession) {
@@ -26,22 +26,27 @@ module.exports.getMySessions = function (req, res) {
                 sendJSONresponse(res, 404, err);
                 return;
             }
-            console.log(session);
+            console.log(mysession);
             sendJSONresponse(res, 200, mysession);
         });
 
 };
 
 
-/* POST /mysessions */
+/* POST /mysessions/sessionid */
 module.exports.addMySession = function (req, res) {
-    var userId = req.payload._id;
+    var userid = req.payload._id;
+    var sessionid = req.params.sessionid;
+    var time = req.body.startTime;
+    var compareDate = new Date(time)
+
+
     MySessions
         .findOneAndUpdate({
-            postedBy: userId
+            postedBy: userid
         }, {
             $addToSet: {
-                sessions: req.body
+                sessions: sessionid
             }
         }, {
             upsert: true,
@@ -52,26 +57,29 @@ module.exports.addMySession = function (req, res) {
                 sendJSONresponse(res, 404, err);
                 return;
             }
-            console.log(session);
+
+            //console.log(mysession);
             sendJSONresponse(res, 200, mysession);
-        });
+        }
+
+        );
 };
 
 
 /** DELETE /mysessions */
 module.exports.deleteMySessions = function (req, res) {
-    var userId = req.payload._id;
+    var userid = req.payload._id;
 
     MySessions
         .findOneAndRemove({
-            postedBy: userId
+            postedBy: userid
         }, function (err, mysession) {
             if (err) {
                 console.log(err);
                 sendJSONresponse(res, 404, err);
                 return;
             }
-            console.log(session);
+            console.log(mysession);
             sendJSONresponse(res, 200, mysession);
         });
 }
@@ -79,13 +87,13 @@ module.exports.deleteMySessions = function (req, res) {
 /** DELETE /mysessions/:sessionid */
 module.exports.deleteOneSpeaker = function (req, res) {
 
-    var userId = req.payload._id;
+    var userid = req.payload._id;
 
-    Favorites.findOneAndUpdate({
-        postedBy: userId
+    MySessions.findOneAndUpdate({
+        postedBy: userid
     }, {
             $pull: {
-                sessions: req.params.sessionId
+                sessions: req.params.sessionid
             }
         }, {
             new: true
@@ -95,7 +103,7 @@ module.exports.deleteOneSpeaker = function (req, res) {
                 sendJSONresponse(res, 404, err);
                 return;
             }
-            console.log(session);
+            console.log(mysession);
             sendJSONresponse(res, 200, mysession);
         });
 };

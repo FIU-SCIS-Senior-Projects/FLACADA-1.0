@@ -48,7 +48,7 @@ router.post('/login', ctrlAuth.login);
 
 //my sesssions
 router.get('/mysessions', auth, ctrlMySession.getMySessions);
-router.post('/mysessions', auth, ctrlMySession.addMySession);
+router.post('/mysessions/:sessionid', auth, ctrlMySession.addMySession);
 router.delete('/mysessions', auth, ctrlMySession.deleteMySessions);
 router.delete('/mysessions/:sessionid', auth, ctrlMySession.deleteOneSpeaker);
 
