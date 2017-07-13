@@ -20,7 +20,7 @@
                                     </div>
                                     <div class="col-xs-12">
                                     <div ng-if="vm.isAdmin" ng-click="vm.delete(session._id)" class="btn btn-danger pull-right">delete </div>
-                                    <div ng-click="vm.addSession(session._id)" class="btn btn-success pull-right">+ mySchedule </div>
+                                    <div ng-click="vm.addMySession(session._id)" class="btn btn-success pull-right">+ mySchedule </div>
                                     </div>
                                     <p class="sessionStartTime">{{ session.startTime | date : 'MMMM d, y h:mm a ' : 'UTC' }} - {{ session.endTime | date
                                         : 'h:mm a' : 'UTC'}}

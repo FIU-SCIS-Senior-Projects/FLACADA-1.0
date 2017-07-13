@@ -39,7 +39,7 @@
         };
 
         var deleteSpeaker = function (speakerid) {
-            return $http.delete('/api/speakers/' + speakerid, null, {
+            return $http.delete('/api/speakers/' + speakerid, {
                 headers: {
                     Authorization: 'Bearer ' + authentication.getToken()
                 }
@@ -109,7 +109,7 @@
             });
         };
 
-        var deleteAllSessions = function () {
+        var deleteAllMySessions = function () {
             return $http.delete('/api/mysessions', {
                 headers: {
                     Authorization: 'Bearer ' + authentication.getToken()
@@ -176,8 +176,8 @@
             addSpeaker: addSpeaker,
             getMySessions : getMySessions,
             addMySession : addMySession,
-            deleteMySessions : deleteMySessions,
             deleteMySession : deleteMySession,
+            deleteAllMySessions : deleteAllMySessions,
             deleteAllExhibitors : deleteAllExhibitors,
             deleteAllSponsors : deleteAllSponsors,
             deleteAllSpeakers : deleteAllSpeakers, 
@@ -185,7 +185,6 @@
             getMySessions: getMySessions,
             addMySession: addMySession,
             deleteAllSessions: deleteAllSessions,
-            deleteMySession: deleteMySession,
         };
     }
 

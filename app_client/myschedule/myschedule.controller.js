@@ -32,8 +32,8 @@
                 });
         };
 
-        vm.deleteAllSessions = function(){
-            flacadaData.deleteAllSessions()
+        vm.deleteAllMySessions = function(){
+            flacadaData.deleteAllMySessions()
             .success(function(response){
                 console.log(response.data);
                 $window.location.reload();
