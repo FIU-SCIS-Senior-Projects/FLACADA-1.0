@@ -17,7 +17,7 @@
                                     <p class="sessionStartTime">{{ vm.data.session.startTime | date : 'MMMM d, y h:mm a ' : 'UTC'}} - {{ vm.data.session.endTime
                                         | date : 'h:mm a' : 'UTC'}}
                                     </p>
-                                    <p> {{vm.data.session.location}} </p>
+                                    <p> <span class="glyphicon glyphicon-map-marker"></span> {{vm.data.session.location}} </p>
                                     <div ng-repeat="speaker in vm.data.session.speaker">
                                         <p>Speaker: </p>
                                         <a ng-href="/speaker/{{ speaker._id }}">{{ speaker.firstName}} {{ speaker.lastName}}</a>
@@ -26,8 +26,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12"><a href="/schedule/" class="btn btn-warning">Back to Schedule</a><a class="btn btn-success pull-right">+</a>
-                        <a class="btn btn-danger pull-right">-</a>
+                    <div class="col-xs-12"><a href="/schedule/" class="btn btn-warning">Back to Schedule</a>
                     </div>
                 </div>
             </div>

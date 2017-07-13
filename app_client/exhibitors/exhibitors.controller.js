@@ -4,8 +4,8 @@
         .module('flacadaApp')
         .controller('exhibitorsCtrl', exhibitorsCtrl);
 
-    exhibitorsCtrl.$inject = ['$location', '$scope', 'flacadaData', '$uibModal', 'authentication'];
-    function exhibitorsCtrl($location, $scope, flacadaData, $uibModal, authentication) {
+    exhibitorsCtrl.$inject = ['$location', '$scope', 'flacadaData', '$uibModal', 'authentication', '$window'];
+    function exhibitorsCtrl($location, $scope, flacadaData, $uibModal, authentication, $window) {
         var vm = this;
         vm.pageHeader = 'Exhibitors';
         vm.isAdmin = authentication.isAdmin();
@@ -37,6 +37,7 @@
             flacadaData.deleteExhibitor(exhibitorid)
                 .success(function (response) {
                     console.log(response.data);
+                     $window.location.reload();
                 })
                 .error(function (e) {
                     console.log(e);
@@ -47,6 +48,7 @@
             flacadaData.deleteAllExhibitors () 
                 .success(function (response) {
                     console.log(response.data);
+                     $window.location.reload();
                 })
                 .error(function (e) {
                     console.log(e);
