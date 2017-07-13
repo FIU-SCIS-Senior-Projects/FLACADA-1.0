@@ -5857,7 +5857,7 @@ a.list-group-item:focus {
 
 /*heading color*/
 .panel-primary > .panel-heading {
-  color: #000000;
+  color: #444444;
   background-color: #ebeab4;
   border-color: #dbd978;
 }
