@@ -40,6 +40,16 @@
                 controller: 'speakersCtrl',
                 controllerAs: 'vm'
             })
+            .when('/speakerFirst', {
+                templateUrl: '/speakers/speakerfirst.view.html',
+                controller: 'speakersCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/speakerInstitution', {
+                templateUrl: '/speakers/speakerinstitution.view.html',
+                controller: 'speakersCtrl',
+                controllerAs: 'vm'
+            })
             .when('/speaker/:speakerid', {
                 templateUrl: '/details/speakerDetail/speakerDetail.view.html',
                 controller: 'speakerDetailCtrl',

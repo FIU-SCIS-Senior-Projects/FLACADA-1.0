@@ -9,13 +9,13 @@
                 <div class="col-xs-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <div class="panel-heading">
-                                <h2 class="panel-title"> Sort by: <a href="/speakers/" style="background-color:grey;"> Last name </a><a href="/speakerFirst/">| First name</a> 
-                                    <a href="/speakerFirst/">| Institution</a>
+                            <div class="panel-heading"> 
+                                <h2 class="panel-title">Sort by: <a href="/speakers/"> Last name </a>|<a href="/speakerFirst/"> First name</a> 
+                                    |<a href="/speakerFirst/" style="background-color:grey;" > Institution</a>
                                 </h2>
                             </div>
                         </div>
-                        <div class="panel-body" ng-repeat="speaker in vm.data.speakers | orderBy: 'lastName'">
+                        <div class="panel-body" ng-repeat="speaker in vm.data.speakers | orderBy: 'institution'">
                             <div class="row">
                                 <div class="col-xs-4">
                                     <img ng-src="{{speaker.picture}}">
