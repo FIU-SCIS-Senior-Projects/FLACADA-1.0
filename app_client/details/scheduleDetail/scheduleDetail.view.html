@@ -18,9 +18,9 @@
                                         | date : 'h:mm a' : 'UTC'}}
                                     </p>
                                     <p> <span class="glyphicon glyphicon-map-marker"></span> {{vm.data.session.location}} </p>
+                                    <p>Speaker(s): </p>
                                     <div ng-repeat="speaker in vm.data.session.speaker">
-                                        <p>Speaker: </p>
-                                        <a ng-href="/speaker/{{ speaker._id }}">{{ speaker.firstName}} {{ speaker.lastName}}</a>
+                                      <p>  <a ng-href="/speaker/{{ speaker._id }}">{{ speaker.firstName}} {{ speaker.lastName}}</a></p>
                                     </div>
                                 </div>
                             </div>
