@@ -16,18 +16,17 @@
                                 <div class="col-xs-8">
                                     <p> {{vm.data.speaker.title}} </p>
                                     <p>{{vm.data.speaker.institution}}</p>
-                                    <p> {{vm.data.speaker.email}} </p>
+                                    <p> <span class="glyphicon glyphicon-envelope"></span> {{vm.data.speaker.email}} </p>
+                                    <p>Sessions: </p>
                                     <div ng-repeat="session in vm.data.speaker.sessions">
-                                        <p>Sessions: </p>
-                                        <a href="/schedule/{{ session._id }}">{{ session.name}}</a>
+                                        <p> <a href="/schedule/{{ session._id }}">{{ session.name}}</a></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12"><a href="/speakers/" class="btn btn-warning">Back to Speakers</a><a class="btn btn-success pull-right">+</a>
-                    <a class="btn btn-danger pull-right">-</a>
+                <div class="col-xs-12"><a href="/speakers/" class="btn btn-warning">Back to Speakers</a>
                 </div>
             </div>
         </div>

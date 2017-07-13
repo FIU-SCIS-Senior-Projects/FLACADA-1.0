@@ -4,8 +4,8 @@
         .module('flacadaApp')
         .controller('scheduleCtrl', scheduleCtrl);
 
-    scheduleCtrl.$inject = ['$location', 'flacadaData', 'authentication', '$uibModal'];
-    function scheduleCtrl($location, flacadaData, authentication, $uibModal) {
+    scheduleCtrl.$inject = ['$location', 'flacadaData', 'authentication', '$uibModal', '$window'];
+    function scheduleCtrl($location, flacadaData, authentication, $uibModal,$window) {
         var vm = this;
         vm.pageHeader = 'Schedule';
         vm.isAdmin = authentication.isAdmin();
@@ -48,7 +48,7 @@
                     vm.message = "Successfully added to my schedule!"
                 })
                 .error(function (e) {
-                    vm.formError = e;
+                    vm.message = "Unable to add session to my schedule";
                 });
 
         };

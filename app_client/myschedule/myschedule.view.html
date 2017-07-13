@@ -14,11 +14,11 @@
                                 <div class="col-xs-3"><span class="glyphicon glyphicon-calendar"></span></div>
                                 <div class="col-xs-9">
                                     <a ng-href="/schedule/{{ session._id }}">{{ session.name }}</a>
-                                    <div ng-if="vm.isLoggedIn" ng-click="vm.deleteMySession(session._id)" class="btn btn-success pull-right">delete </div>
-                                    <p class="sessionStartTime">{{ session.startTime | date : 'MMMM d, y h:mm a ' : 'UTC' }} - {{ session.endTime | date
+                                    <div ng-if="vm.isLoggedIn" ng-click="vm.deleteMySession(session._id)" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-trash"> </div>
+                                    <p class="sessionStartTime"> {{ session.startTime | date : 'MMMM d, y h:mm a ' : 'UTC' }} - {{ session.endTime | date
                                         : 'h:mm a' : 'UTC'}}
                                     </p>
-                                    <p> {{session.location}} </p>
+                                    <p> <span class="glyphicon glyphicon-map-marker"></span>{{session.location}} </p>
 
                                 </div>
                             </div>

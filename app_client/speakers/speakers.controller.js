@@ -4,8 +4,8 @@
         .module('flacadaApp')
         .controller('speakersCtrl', speakersCtrl);
 
-    speakersCtrl.$inject = ['$location','$scope', 'flacadaData', 'authentication', '$uibModal'];
-    function speakersCtrl($location, $scope, flacadaData, authentication, $uibModal) {
+    speakersCtrl.$inject = ['$location','$scope', 'flacadaData', 'authentication', '$uibModal', '$window'];
+    function speakersCtrl($location, $scope, flacadaData, authentication, $uibModal, $window) {
         var vm = this;
         vm.pageHeader = 'Speakers';
         vm.isAdmin = authentication.isAdmin();
@@ -46,6 +46,7 @@
             flacadaData.deleteSpeaker(speakerid)
                 .success(function (response) {
                     console.log(response.data);
+                     $window.location.reload();
                 })
                 .error(function (e) {
                     console.log(e);
@@ -56,6 +57,7 @@
             flacadaData.deleteAllSpeakers () 
                 .success(function (response) {
                     console.log(response.data);
+                     $window.location.reload();
                 })
                 .error(function (e) {
                     console.log(e);

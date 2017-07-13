@@ -17,14 +17,12 @@
           </div>
           <div class="panel-body">
             <p><a href="/schedule/">Schedule</a></p>
+            <p ng-if="vm.isLoggedIn"><a ng-if="vm.isLoggedIn"href="/myschedule/">My schedule</a></p>
             <p><a href="/exhibitors/">Exhibitors</a></p>
             <p><a href="/speakers/">Speakers</a></p>
             <p><a href="/sponsors/">Sponsors</a></p>
           </div>
         </div>
-      </div>
-      <div ng-if="vm.isLoggedIn" class="col-xs-12 col-sm-4"><a href="/myschedule/" class="btn btn-default">My Schedule</a></div>
-    </div>
   </div>
 </div>
   <footer-generic></footer-generic>

@@ -4,8 +4,8 @@
         .module('flacadaApp')
         .controller('sponsorsCtrl', sponsorsCtrl);
 
-    sponsorsCtrl.$inject = ['$location', '$scope', 'flacadaData', '$uibModal', 'authentication'];
-    function sponsorsCtrl($location, $scope, flacadaData, $uibModal, authentication) {
+    sponsorsCtrl.$inject = ['$location', '$scope', 'flacadaData', '$uibModal', 'authentication', '$window'];
+    function sponsorsCtrl($location, $scope, flacadaData, $uibModal, authentication, $window) {
         var vm = this;
         vm.pageHeader = 'Sponsors';
         vm.isAdmin = authentication.isAdmin();
@@ -37,6 +37,7 @@
             flacadaData.deleteSponsor(sponsorid)
                 .success(function (response) {
                     console.log(response.data);
+                     $window.location.reload();
                 })
                 .error(function (e) {
                     console.log(e);
@@ -47,6 +48,7 @@
             flacadaData.deleteAllSponsors () 
                 .success(function (response) {
                     console.log(response.data);
+                     $window.location.reload();
                 })
                 .error(function (e) {
                     console.log(e);
