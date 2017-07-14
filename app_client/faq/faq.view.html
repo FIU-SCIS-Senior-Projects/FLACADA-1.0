@@ -15,7 +15,7 @@
                         <div class="panel-body" ng-repeat="event in vm.localevents">
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <p>{{ event.name }}</p>
+                                    <a href="/exhibitor/{{ exhibitor._id }}">{{ event.name }}</a>
                                     <div ng-if="vm.isAdmin" ng-click="" class="btn btn-danger pull-right btn-sm">
                                         <span class="glyphicon glyphicon-trash"> </div>
                                 </div>

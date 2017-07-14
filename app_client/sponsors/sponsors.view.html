@@ -4,9 +4,9 @@
     <icon></icon>
     <page-header content="vm.pageHeader"></page-header>
     <div class="row">
-        <div class="col-xs-12 col-md-4">
+        <div class="col-xs-12 col-md-7">
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 col-md-7">
                     <div class="panel panel-primary">
                         <div class="panel-heading"></div>
                         <div class="panel-body" ng-repeat="sponsor in vm.data.sponsors">
@@ -22,9 +22,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
-                    <a ng-if="vm.isAdmin" ng-click="vm.popupSponsorForm()" class="btn btn-success pull-right">Add Sponsor</a>
-                    <a ng-if="vm.isAdmin" ng-click="vm.deleteAll()" class="btn btn-danger pull-right">Reset</a>
+                <div class="col-xs-10 col-md-7"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.popupSponsorForm()" class="btn btn-success">Add Sponsor</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.deleteAll()" class="btn btn-danger">Reset</a>
                 </div>
             </div>
         </div>

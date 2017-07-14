@@ -6,14 +6,14 @@
     <div class="row">
         <div class="col-xs-12 col-md-7">
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 col-md-7">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="panel-heading">
-                                <h2 class="panel-title">Sort by: <a href="/speakers/"> Last name </a>|
-                                    <a href="/speakerFirst/" style="background-color:grey;"> First name</a> 
-                                    |<a href="/speakerInstitution/" > Institution</a>
-                                </h2>
+                                <h3 class="panel-title">Sort by: <a href="/speakers/"> Last name </a>|
+                                    <a href="/speakerFirst/" style="background-color:#dbd978;"> First name</a> |
+                                    <a href="/speakerInstitution/"> Institution</a>
+                                </h3>
                             </div>
                         </div>
                         <div class="panel-body" ng-repeat="speaker in vm.data.speakers | orderBy: 'firstName'">
@@ -22,18 +22,19 @@
                                     <img ng-src="{{speaker.picture}}">
                                 </div>
                                 <div class="col-xs-8">
-                                    <a ng-href="/speaker/{{ speaker._id }}">{{ speaker.firstName }} {{speaker.lastName}}</a>
-                                    <div ng-if="vm.isAdmin" ng-click="vm.delete(speaker._id)" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span></div>
-                                    <div ng-if="vm.isAdmin" ng-click="vm.addSessionForm(speaker._id)" class="btn btn-success pull-right">+Session</div>
+                                    <p><a ng-href="/speaker/{{ speaker._id }}">{{ speaker.firstName }} {{speaker.lastName}}</a></p>
                                     <p> {{speaker.title}} </p>
                                     <p>{{speaker.institution}}</p>
+                                    <div ng-if="vm.isAdmin" ng-click="vm.delete(speaker._id)" class="btn btn-danger pull-left btn-sm">
+                                        <span class="glyphicon glyphicon-trash"></span></div>
+                                    <div ng-if="vm.isAdmin" ng-click="vm.addSessionForm(speaker._id)" class="btn btn-success pull-left btn-sm">+Session</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
-                    <a ng-if="vm.isAdmin" ng-click="vm.deleteAll()" class="btn btn-danger pull-right">Reset</a>
+                <div class="col-xs-12 col-md-7"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.deleteAll()" class="btn btn-danger">Reset</a>
                 </div>
             </div>
         </div>

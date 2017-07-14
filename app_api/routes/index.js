@@ -41,6 +41,7 @@ router.delete('/speakers', auth, ctrlSpeaker.deleteSpeakers);
 router.get('/speakers/:speakerid', ctrlSpeaker.getOneSpeaker);
 router.delete('/speakers/:speakerid', auth, ctrlSpeaker.deleteOneSpeaker);
 router.post('/speakers/:speakerid/sessions', auth, ctrlSpeaker.createSpeakerSession); //add session to a speaker
+router.post('/speakers',auth, ctrlSpeaker.createSpeaker);
 
 //login and register
 router.post('/register', ctrlAuth.register);
