@@ -10,7 +10,7 @@
                     <div role="alert" ng-show="vm.message" class="alert alert-info">{{ vm.message }}</div>
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h1 align="center" class="panel-title">All sessions <a ng-if="vm.isLoggedIn" href="/myschedule/">| My schedule</a>
+                            <h1 align="center" class="panel-title">All sessions <a ng-if="vm.isLoggedIn"href="/myschedule/">| My schedule</a>
                             </h1>
                         </div>
                         <div class="panel-body" ng-repeat="session in vm.data.sessions | orderBy: 'startTime'">

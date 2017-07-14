@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-xs-12 col-md-7">
             <div class="row">
-                <div class="col-xs-12 col-md-7">
+                <div class="col-xs-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="panel-heading">
@@ -22,7 +22,9 @@
                                     <img ng-src="{{speaker.picture}}">
                                 </div>
                                 <div class="col-xs-8">
-                                    <p><a ng-href="/speaker/{{ speaker._id }}">{{ speaker.firstName }} {{speaker.lastName}}</a></p>
+                                    <a ng-href="/speaker/{{ speaker._id }}">{{ speaker.firstName }} {{speaker.lastName}}</a>
+                                    <div ng-if="vm.isAdmin" ng-click="vm.delete(speaker._id)" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span></div>
+                                    <div ng-if="vm.isAdmin" ng-click="vm.addSessionForm(speaker._id)" class="btn btn-success pull-right">+Session</div>
                                     <p> {{speaker.title}} </p>
                                     <p>{{speaker.institution}}</p>
                                     <div ng-if="vm.isAdmin" ng-click="vm.delete(speaker._id)" class="btn btn-danger pull-left btn-sm">
@@ -33,8 +35,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-7"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
-                    <a ng-if="vm.isAdmin" ng-click="vm.deleteAll()" class="btn btn-danger">Reset</a>
+                <div class="col-xs-12"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.deleteAll()" class="btn btn-danger pull-right">Reset</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.addGeneralSpeakerForm()" class="btn btn-success pull-right">+</a>
                 </div>
             </div>
         </div>
