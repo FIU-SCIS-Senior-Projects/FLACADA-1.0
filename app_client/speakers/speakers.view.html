@@ -22,8 +22,9 @@
                                 </div>
                                 <div class="col-xs-8">
                                     <a ng-href="/speaker/{{ speaker._id }}">{{ speaker.firstName }} {{speaker.lastName}}</a>
-                                    <div ng-if="vm.isAdmin" ng-click="vm.delete(speaker._id)" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span></div>
-                                    <div ng-if="vm.isAdmin" ng-click="vm.addSessionForm(speaker._id)" class="btn btn-success pull-right">+Session</div>
+                                    <div ng-if="vm.isAdmin" ng-click="vm.delete(speaker._id)" class="btn btn-danger pull-right btn-sm">
+                                        <span class="glyphicon glyphicon-trash"></span></div>
+                                    <div ng-if="vm.isAdmin" ng-click="vm.addSessionForm(speaker._id)" class="btn btn-success pull-right btn-sm">+Session</div>
                                     <p> {{speaker.title}} </p>
                                     <p>{{speaker.institution}}</p>
                                 </div>
@@ -32,7 +33,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
-                    <a ng-if="vm.isAdmin" ng-click="vm.deleteAll()" class="btn btn-danger pull-right">Reset</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.deleteAll()" class="btn btn-danger">Reset</a>
                 </div>
             </div>
         </div>

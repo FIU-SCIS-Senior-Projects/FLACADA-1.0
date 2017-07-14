@@ -11,6 +11,7 @@
         vm.isAdmin = authentication.isAdmin();
         vm.isLoggedIn = authentication.isLoggedIn();
         vm.message = ""
+        vm.isRegularUser = !vm.isAdmin && vm.isLoggedIn; 
 
 
         flacadaData.sessions()

@@ -1,6 +1,6 @@
 (function () {
 
-    angular.module('flacadaApp', ['ngRoute', 'ngSanitize', 'ui.bootstrap']);
+    angular.module('flacadaApp', [ 'ngRoute', 'ngSanitize', 'ui.bootstrap', ]);
 
     function config($routeProvider, $locationProvider) {
         $routeProvider
@@ -78,6 +78,11 @@
             .when('/login', {
                 templateUrl: '/auth/login/login.view.html',
                 controller: 'loginCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/local', {
+                templateUrl: '/local/local.view.html',
+                controller: 'localCtrl',
                 controllerAs: 'vm'
             })
             .otherwise({ redirectTo: '/' });
