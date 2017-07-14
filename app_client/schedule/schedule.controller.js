@@ -4,8 +4,8 @@
         .module('flacadaApp')
         .controller('scheduleCtrl', scheduleCtrl);
 
-    scheduleCtrl.$inject = ['$location', 'flacadaData', 'authentication', '$uibModal', '$window'];
-    function scheduleCtrl($location, flacadaData, authentication, $uibModal,$window) {
+    scheduleCtrl.$inject = ['$location', '$scope', 'flacadaData', 'authentication', '$uibModal', '$window'];
+    function scheduleCtrl($location, $scope, flacadaData, authentication, $uibModal, $window) {
         var vm = this;
         vm.pageHeader = 'Schedule';
         vm.isAdmin = authentication.isAdmin();
