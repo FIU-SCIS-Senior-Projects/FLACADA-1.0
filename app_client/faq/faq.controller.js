@@ -17,14 +17,6 @@
             question: 'Where can I see my schedule?',
             answer: 'There is a link called "my schedule" on the conference page once you sign up for an account?'
         }];
-        vm.dining = [{
-            name: 'Chilis', 
-            location:'Graham Center'
-        },
-    {
-        name: 'Panda Express',
-        location: 'MANGO'
-    }]
 
 
 

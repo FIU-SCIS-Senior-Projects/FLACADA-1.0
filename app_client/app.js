@@ -90,6 +90,11 @@
                 controller: 'faqCtrl',
                 controllerAs: 'vm'
             })
+            .when('/wifi', {
+                templateUrl: '/wifi/wifi.view.html',
+                controller: 'wifiCtrl',
+                controllerAs: 'vm'
+            })
             .otherwise({ redirectTo: '/' });
         $locationProvider.html5Mode(true);
     }
