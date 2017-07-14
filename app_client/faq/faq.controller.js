@@ -8,10 +8,14 @@
         var vm = this;
         vm.isAdmin = authentication.isAdmin();
         vm.pageHeader = 'FAQ';
-        vm.faqevents = [{
-            name: 'Try best brunches in Miami',
+        vm.faq = [{
+            number: '1',
+            question: 'Do I need an account to create a schedule?',
+            answer: 'Yes'
         }, {
-            name: 'Find the best dinners in Miami'
+            number: '2',
+            question: 'Where can I see my schedule?',
+            answer: 'There is a link called "my schedule" on the conference page once you sign up for an account?'
         }];
         vm.dining = [{
             name: 'Chilis', 
