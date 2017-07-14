@@ -76,6 +76,17 @@
                 });
         }
 
+        vm.addGeneralSessionForm = function () {
+            var uibModal = $uibModal.open({
+                templateUrl: '/generalScheduleModal/generalScheduleModal.view.html',
+                controller: 'generalScheduleModalCtrl as vm'
+
+            });
+            uibModal.result.then(function (data) {
+                vm.data.sessions.push(data);
+            })
+        };
+
 
     };
 

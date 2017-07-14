@@ -165,6 +165,14 @@
             });
         };
 
+        var createSession = function (data) {
+            return $http.post('/api/sessions',data, {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
+        };
+
         return {
             sponsors: sponsors,
             sponsorDetails: sponsorDetails,
@@ -193,7 +201,8 @@
             getMySessions: getMySessions,
             addMySession: addMySession,
             deleteAllSessions: deleteAllSessions,
-            createSpeaker : createSpeaker
+            createSpeaker : createSpeaker,
+            createSession : createSession
         };
     }
 

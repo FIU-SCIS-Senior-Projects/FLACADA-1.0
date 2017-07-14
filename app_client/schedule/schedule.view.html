@@ -35,9 +35,9 @@
                         </div>
                     </div>
                     <div class="col-xs-12"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
-                    <a ng-if="vm.isAdmin" href="/schedule/speaker/new/" class="btn btn-success pull-right">Add session</a>
-                    <a ng-if="vm.isAdmin" class="btn btn-danger pull-right">Reset
-          <!--TODO: linking to the according exhibitors-info--></a></div>
+                    <a ng-if="vm.isAdmin" ng-click="vm.addGeneralSessionForm()" class="btn btn-success pull-right">Add Session</a>
+                    <a ng-if="vm.isAdmin" class="btn btn-danger pull-right">Reset</a>
+                    </div>
                 </div>
             </div>
         </div>

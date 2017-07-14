@@ -70,7 +70,7 @@
     vm.addGeneralSpeakerForm = function () {
         var uibModal = $uibModal.open({
             templateUrl: '/generalSpeakerModal/generalSpeakerModal.view.html',
-            controller: 'generalSpeakerModalCtrl as vm',
+            controller: 'generalSpeakerModalCtrl as vm'
         });
 
         uibModal.result.then(function(data) {
