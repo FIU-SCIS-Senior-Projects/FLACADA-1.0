@@ -24,24 +24,6 @@
         console.log(e);
       });
 
-    vm.addSpeakerForm = function(sessionid) {
-      console.log("sessionid " + sessionid)
-      var uibModal = $uibModal.open({
-        templateUrl: '/speakerModal/speakerModal.view.html',
-        controller: 'speakerModalCtrl as vm',
-        resolve: {
-          sessionData: function() {
-            return {
-              sessionid: sessionid
-            };
-          }
-        }
-      })
-
-      uibModal.result.then(function(data) {
-        vm.data.speaker.sessions.push(data);
-      })
-    };
 
     vm.addSessionForm = function(speakerid) {
       console.log("speakerid " + speakerid)
@@ -84,6 +66,18 @@
           console.log(e);
         });
     }
+
+    vm.addGeneralSpeakerForm = function () {
+        var uibModal = $uibModal.open({
+            templateUrl: '/generalSpeakerModal/generalSpeakerModal.view.html',
+            controller: 'generalSpeakerModalCtrl as vm',
+        });
+
+        uibModal.result.then(function(data) {
+            vm.data.speakers.push(data);
+        })
+    }
+
   };
 
 })();

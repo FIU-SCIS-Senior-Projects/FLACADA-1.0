@@ -1,11 +1,10 @@
 (function () {
     angular
         .module('flacadaApp')
-        .controller('speakerModalCtrl', speakerModalCtrl);
-    speakerModalCtrl.$inject = ['$uibModalInstance', 'flacadaData'];
-    function speakerModalCtrl($uibModalInstance, flacadaData) {
+        .controller('generalSpeakerModalCtrl', generalSpeakerModalCtrl);
+    generalSpeakerModalCtrl.$inject = ['$uibModalInstance', 'flacadaData'];
+    function generalSpeakerModalCtrl($uibModalInstance, flacadaData) {
         var vm = this;
-        vm.sessionData = sessionData;
 
         vm.onSubmit = function () {
             vm.formError = "";
@@ -17,9 +16,9 @@
             }
         }
 
-        ///sessions/:sessionid/speakers
+        // /speakers
         vm.doAddSpeaker = function (formData) {
-            flacadaData.addSpeaker({
+            flacadaData.createSpeaker({
                 firstName: formData.firstName,
                 lastName: formData.lastName,
                 email: formData.email,
