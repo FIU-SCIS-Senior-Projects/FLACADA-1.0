@@ -4,17 +4,7 @@ NODE_ENV=production MONGODB_URI=mongodb://nimorale:Niccck46@ds149221.mlab.com:49
 //RUN LOCALLY (make sure you have mongod db running <$sudo mongod>)
 nodemon start
 
-
-mongo ds157702.mlab.com:57702/heroku_xgdzxgf9 -u <dbuser> -p <dbpassword>
-
--h􀁿Live host and port
-■ -d􀁿Live database name
-■ -u􀁿Username for the live database
-■ -p􀁿Password for the live database
-■ Path to the dump directory and database name (this comes at the end of the
-command and doesn’t have a corresponding flag like the other parameters)
-
-
 mongorestore -h ds157702.mlab.com:57702 -d heroku_xgdzxgf9 -u root -p root ~/tmp/mongodump/flacada
+
 
 mongo ds157702.mlab.com:57702/heroku_xgdzxgf9 -u root -p root
