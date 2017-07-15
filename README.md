@@ -30,8 +30,6 @@ The app is deployed on Heroku using mLab live database, ask product owner for mo
 * **Nickolas Morales** - *Mostly Front End*
 * **Mabel Amaya** - *Mostly Back End*
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
 ## License
 
 The MIT License (MIT)
