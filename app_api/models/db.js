@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var gracefulShutdown;
 var dbURI = 'mongodb://localhost/flacada';
 if (process.env.NODE_ENV === 'production') {
-    dbURI = "mongodb://root:root@ds157702.mlab.com:57702/heroku_xgdzxgf9";
+    dbURI = process.env.MONGOLAB_URI;
 }
 
 mongoose.connect(dbURI, { useMongoClient: true });
