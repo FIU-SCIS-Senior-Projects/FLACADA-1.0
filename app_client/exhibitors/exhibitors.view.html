@@ -12,7 +12,7 @@
                         <div class="panel-body" ng-repeat="exhibitor in vm.data.exhibitors">
                             <div class="row">
                                 <div class="col-xs-4">
-                                    <img ng-src="{{exhibitor.image}}">
+                                    <img ng-src="{{exhibitor.image}}" height="60" width="60">
                                 </div>
                                 <div class="col-xs-8">
                                     <a href="/exhibitor/{{ exhibitor._id }}">{{ exhibitor.name }}</a>
