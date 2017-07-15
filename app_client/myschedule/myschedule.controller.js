@@ -2,16 +2,16 @@
 
     angular
         .module('flacadaApp')
-        .controller('myscheduleCtrl', myscheduleCtrl);
+        .controller('myScheduleCtrl', myScheduleCtrl);
 
-    myscheduleCtrl.$inject = ['$scope', 'flacadaData', 'authentication', '$window'];
-    function myscheduleCtrl($scope, flacadaData, authentication, $window) {
+    myScheduleCtrl.$inject = ['$scope', 'flacadaData', 'authentication', '$window'];
+    function myScheduleCtrl($scope, flacadaData, authentication, $window) {
         var vm = this;
         vm.pageHeader = 'My schedule';
         vm.isLoggedIn = authentication.isLoggedIn();
         vm.sessionsExist = false;
 
-        flacadaData.getMysessions()
+        flacadaData.getMySessions()
             .success(function (data) {
                 vm.data = { mysessions: data };
                 console.log(vm.data);
@@ -20,9 +20,9 @@
                 console.log(e);
             });
 
-        vm.deleteMysession = function (sessionid) {
+        vm.deleteMySession = function (sessionid) {
             console.log(sessionid);
-            flacadaData.deleteMysession(sessionid)
+            flacadaData.deleteMySession(sessionid)
                 .success(function (response) {
                     console.log(response.data);
                     $window.location.reload();
@@ -32,8 +32,8 @@
                 });
         };
 
-        vm.deleteAllMysessions = function(){
-            flacadaData.deleteAllMysessions()
+        vm.deleteAllMySessions = function(){
+            flacadaData.deleteAllMySessions()
             .success(function(response){
                 console.log(response.data);
                 $window.location.reload();

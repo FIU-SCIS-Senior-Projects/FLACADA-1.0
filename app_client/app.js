@@ -67,7 +67,7 @@
             })
             .when('/myschedule', {
                 templateUrl: '/myschedule/myschedule.view.html',
-                controller: 'myscheduleCtrl',
+                controller: 'myScheduleCtrl',
                 controllerAs: 'vm'
             })
             .when('/register', {
