@@ -27,12 +27,6 @@ summary {
   display: block;
 }
 
-/* Fix for viewport being too wide below smallest breakpoint */
-@media (max-width: 767px) {
-  navbar > .container { overflow: hidden; } /* fix */
-  navbar > .container > * { overflow: visible; } /* reset back to normal */
-}
-
 audio,
 canvas,
 video {
