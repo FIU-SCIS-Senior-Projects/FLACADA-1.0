@@ -33,10 +33,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12">
-                        <a href="/conference/" class="btn btn-warning">Back to Conference</a>
-                        <a ng-if="vm.isAdmin" href="/schedule/speaker/new/" class="btn btn-success">Add session</a>
-                        <a ng-if="vm.isAdmin" class="btn btn-danger ">Reset</a>
+                    <div class="col-xs-12"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.addGeneralSessionForm()" class="btn btn-success ">Add Session</a>
+                    <a ng-if="vm.isAdmin" class="btn btn-danger">Reset</a>
                     </div>
                 </div>
             </div>

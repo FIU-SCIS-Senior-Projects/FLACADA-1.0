@@ -8,9 +8,11 @@
         var vm = this;
         vm.isAdmin = authentication.isAdmin();
         vm.pageHeader = 'Wifi';
-        vm.wifi = {
-            
-        };
+        vm.wifi = [{
+            description: 'The information to log into the FIU wifi is:',
+            username: 'Username = guest',
+            password: 'Password = guest123' 
+        }];
 
 
 

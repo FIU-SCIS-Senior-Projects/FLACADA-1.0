@@ -70,7 +70,7 @@
             flacadaData.deleteAllSessions()
                 .success(function (response) {
                     console.log(response.data);
-                    vm.message = "Successfully added to my schedule!"
+                    $window.location.reload();
                 })
                 .error(function (e) {
                     console.log(e);

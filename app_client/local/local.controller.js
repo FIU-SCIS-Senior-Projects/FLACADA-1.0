@@ -3,8 +3,8 @@
     angular
         .module('flacadaApp')
         .controller('localCtrl', localCtrl);
-    localCtrl.$inject = ['$scope', 'authentication'];
-    function localCtrl($scope, authentication) {
+    localCtrl.$inject = ['$scope', 'authentication', '$window'];
+    function localCtrl($scope, authentication, $window) {
         var vm = this;
         vm.isAdmin = authentication.isAdmin();
         vm.pageHeader = 'Local';

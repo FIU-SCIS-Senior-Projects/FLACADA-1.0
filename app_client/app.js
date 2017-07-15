@@ -95,6 +95,11 @@
                 controller: 'wifiCtrl',
                 controllerAs: 'vm'
             })
+            .when('/maps', {
+                templateUrl: '/maps/maps.view.html',
+                controller: 'mapsCtrl',
+                controllerAs: 'vm'
+            })
             .otherwise({ redirectTo: '/' });
         $locationProvider.html5Mode(true);
     }
