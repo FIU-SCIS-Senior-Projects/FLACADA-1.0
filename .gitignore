@@ -2,5 +2,6 @@
 node_modules
 Icon
 .idea
-.Ds_Store
+.DS_Store
 run.txt
+.vscode
