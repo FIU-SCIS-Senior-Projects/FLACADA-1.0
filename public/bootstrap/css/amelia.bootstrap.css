@@ -27,8 +27,6 @@ summary {
   display: block;
 }
 
-
-
 audio,
 canvas,
 video {
@@ -495,8 +493,8 @@ h6 small,
 h1,
 h2,
 h3 {
-  margin-top: -5px;
-  margin-bottom: 0px;
+  margin-top: -15px;
+  margin-bottom: 10px;
 }
 
 h4,
@@ -5785,7 +5783,7 @@ a.list-group-item:focus {
 }
 
 .panel-heading {
-  padding: 15px 15px;
+  padding: 10px 15px;
   border-bottom: 1px solid transparent;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
