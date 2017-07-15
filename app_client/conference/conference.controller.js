@@ -7,9 +7,10 @@
   function conferenceCtrl($scope, flacadaData, authentication) {
     var vm = this;
     vm.pageHeader = 'FLACADA'
-  
+    vm.isLoggedIn = authentication.isLoggedIn();
+    vm.isAdmin = authentication.isAdmin();
+    vm.isRegularUser = !vm.isAdmin && vm.isLoggedIn;
 
-  vm.isLoggedIn = authentication.isLoggedIn();
 
   };
 })();

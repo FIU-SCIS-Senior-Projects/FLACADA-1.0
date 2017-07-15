@@ -1,6 +1,6 @@
 (function () {
 
-    angular.module('flacadaApp', ['ngRoute', 'ngSanitize', 'ui.bootstrap']);
+    angular.module('flacadaApp', ['ngRoute', 'ngSanitize', 'ui.bootstrap',]);
 
     function config($routeProvider, $locationProvider) {
         $routeProvider
@@ -78,6 +78,26 @@
             .when('/login', {
                 templateUrl: '/auth/login/login.view.html',
                 controller: 'loginCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/local', {
+                templateUrl: '/local/local.view.html',
+                controller: 'localCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/faq', {
+                templateUrl: '/faq/faq.view.html',
+                controller: 'faqCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/wifi', {
+                templateUrl: '/wifi/wifi.view.html',
+                controller: 'wifiCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/maps', {
+                templateUrl: '/maps/maps.view.html',
+                controller: 'mapsCtrl',
                 controllerAs: 'vm'
             })
             .otherwise({ redirectTo: '/' });
