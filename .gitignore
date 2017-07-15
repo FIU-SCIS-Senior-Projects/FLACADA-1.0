@@ -1,4 +1,6 @@
 # Dependency directory
 node_modules
-icon
 .idea
+.DS_Store
+run.txt
+.vscode
