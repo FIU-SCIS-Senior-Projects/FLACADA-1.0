@@ -1,0 +1,23 @@
+
+<navigation>
+</navigation>
+
+<div class="container">
+    <icon></icon>
+    <page-header content="vm.pageHeader"></page-header>
+    <div class="row">
+        <div class="col-xs-12 col-md-7">
+            <div class="row">
+                <div class="col-xs-12 col-md-7">
+                    <img style="width:200%;height:500px;" ng-src="{{vm.mmcmap}}">
+                </div>
+                <div class="col-xs-10">
+                    <a href="/conference/" class="btn btn-warning">Back to Conference</a>
+                    <a ng-if="vm.isAdmin" ng-click="" class="btn btn-success">Add wifi</a>
+                    <a ng-if="vm.isAdmin" ng-click="" class="btn btn-danger">Reset</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer-generic></footer-generic>
+</div>
