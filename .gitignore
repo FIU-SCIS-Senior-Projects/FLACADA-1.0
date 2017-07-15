@@ -1,4 +1,6 @@
 # Dependency directory
 node_modules
-icon
+Icon
 .idea
+.Ds_Store
+run.txt
