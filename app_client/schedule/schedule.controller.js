@@ -4,13 +4,14 @@
         .module('flacadaApp')
         .controller('scheduleCtrl', scheduleCtrl);
 
-    scheduleCtrl.$inject = ['$location', 'flacadaData', 'authentication', '$uibModal', '$window'];
-    function scheduleCtrl($location, flacadaData, authentication, $uibModal,$window) {
+    scheduleCtrl.$inject = ['$location', '$scope', 'flacadaData', 'authentication', '$uibModal', '$window'];
+    function scheduleCtrl($location, $scope, flacadaData, authentication, $uibModal, $window) {
         var vm = this;
         vm.pageHeader = 'Schedule';
         vm.isAdmin = authentication.isAdmin();
         vm.isLoggedIn = authentication.isLoggedIn();
         vm.message = ""
+        vm.isRegularUser = !vm.isAdmin && vm.isLoggedIn; 
 
 
         flacadaData.sessions()
@@ -69,12 +70,23 @@
             flacadaData.deleteAllSessions()
                 .success(function (response) {
                     console.log(response.data);
-                    vm.message = "Successfully added to my schedule!"
+                    $window.location.reload();
                 })
                 .error(function (e) {
                     console.log(e);
                 });
         }
+
+        vm.addGeneralSessionForm = function () {
+            var uibModal = $uibModal.open({
+                templateUrl: '/generalScheduleModal/generalScheduleModal.view.html',
+                controller: 'generalScheduleModalCtrl as vm'
+
+            });
+            uibModal.result.then(function (data) {
+                vm.data.sessions.push(data);
+            })
+        };
 
 
     };
