@@ -1,0 +1,43 @@
+<navigation></navigation>
+
+<div class="container">
+    <icon></icon>
+    <page-header content="vm.pageHeader"></page-header>
+    <div class="row">
+        <div class="col-xs-12 col-md-7">
+            <div class="row">
+                <div class="col-xs-12 col-md-7">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">Sort by: <a href="/speakers/"> Last name </a>|<a href="/speakerFirst/"> First name</a> |
+                                    <a href="/speakerFirst/" style="background-color:#dbd978"> Institution</a>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="panel-body" ng-repeat="speaker in vm.data.speakers | orderBy: 'institution'">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <img ng-src="{{speaker.picture}}" height="60" width="60">
+                                </div>
+                                <div class="col-xs-8">
+                                    <p><a ng-href="/speaker/{{ speaker._id }}">{{ speaker.firstName }}  {{speaker.lastName}}</a></p>
+                                    <p> {{speaker.title}} </p>
+                                    <p>{{speaker.institution}}</p>
+                                    <div ng-if="vm.isAdmin" ng-click="vm.delete(speaker._id)" class="btn btn-danger pull-left btn-sm">
+                                        <span class="glyphicon glyphicon-trash"></span></div>
+                                    <div ng-if="vm.isAdmin" ng-click="vm.addSessionForm(speaker._id)" class="btn btn-success pull-left btn-sm">+Session</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-7"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.addGeneralSpeakerForm()" class="btn btn-success">Add speaker</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.deleteAll()" class="btn btn-danger">Reset</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer-generic></footer-generic>
+</div>

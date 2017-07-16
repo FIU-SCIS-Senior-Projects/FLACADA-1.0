@@ -1,39 +1,45 @@
 <navigation></navigation>
 
 <div class="container">
-<icon></icon>
-<page-header content="vm.pageHeader"></page-header>
-<div class="row">
-  <div class="col-xs-12 col-md-8">
-    <div class="row">
-      <div class="col-xs-12 col-sm-8">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h2 class="panel-title">{{vm.welcome.title}}</h2>
+  <icon></icon>
+  <page-header content="vm.pageHeader"></page-header>
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8">
+          <div class="panel panel-primary">
+            <uib-accordion close-others="vm.oneAtATime">
+              <div uib-accordion-group class="panel-default" is-open="vm.status.open">
+                <uib-accordion-heading>
+                  {{vm.welcome.title}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.status.open, 'glyphicon-chevron-right': !vm.status.open}"></i>
+                </uib-accordion-heading>
+                <p><a ng-href="{{vm.welcome.bylaws}}" target="_blank">Bylaws</a></p>
+                <p><a ng-href="{{vm.welcome.membership}}" target="_blank">Membership</a></p>
+              </div>
           </div>
-          <div class="panel-body">
-            <p><a ng-href= "{{vm.welcome.bylaws}}" target="_blank">Bylaws</a></p>
-            <p><a ng-href= "{{vm.welcome.membership}}" target="_blank">Membership</a></p>
+          </uib-accordion>
+          <div class="panel panel-primary">
+            <uib-accordion close-others="vm.oneAtATime">
+              <div uib-accordion-group class="panel-default" is-open="vm.status.isCustomHeaderOpen">
+                <uib-accordion-heading>
+                  {{vm.sociallinks.title}} <i class="pull-right glyphicon" 
+                  ng-class="{'glyphicon-chevron-down': vm.status.isCustomHeaderOpen, 'glyphicon-chevron-right': !vm.status.isCustomHeaderOpen}"></i>
+                </uib-accordion-heading>
+                <p><a ng-href="{{vm.sociallinks.facebook}}" target="_blank">Facebook</a></p>
+                <p><a ng-href="{{vm.sociallinks.instagram}}" target="_blank">Instagram</a></p>
+                <p><a ng-href="{{vm.sociallinks.twitter}}" target="_blank">Twitter</a></p>
+                <p><a ng-href="{{vm.sociallinks.youtube}}" target="_blank">Youtube</a></p>
+              </div>
           </div>
-        </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h2 class="panel-title">{{vm.sociallinks.title}}</h2>
-          </div>
-          <div class="panel-body">
-            <p><a ng-href= "{{vm.sociallinks.facebook}}" target="_blank">Facebook</a></p>
-            <p><a ng-href= "{{vm.sociallinks.instagram}}" target="_blank">Instagram</a></p>
-            <p><a ng-href= "{{vm.sociallinks.twitter}}" target="_blank">Twitter</a></p>
-          </div>
+          </uib-accordion>
+
         </div>
       </div>
     </div>
+    <div class="col-xs-12 col-md-4">
+      <p>{{vm.sidebar}}</p>
+    </div>
   </div>
-  <div class="col-xs-12 col-md-4">
-    <p class="lead">ABOUT US</p>
-    <p>{{vm.sidebar}}</p>
-  </div>
-</div>
 
   <footer-generic></footer-generic>
 </div>

@@ -1,6 +1,6 @@
 (function () {
 
-    angular.module('flacadaApp', ['ngRoute', 'ngSanitize', 'ui.bootstrap']);
+    angular.module('flacadaApp', ['ngRoute', 'ngSanitize', 'ui.bootstrap',]);
 
     function config($routeProvider, $locationProvider) {
         $routeProvider
@@ -40,6 +40,16 @@
                 controller: 'speakersCtrl',
                 controllerAs: 'vm'
             })
+            .when('/speakerFirst', {
+                templateUrl: '/speakers/speakerfirst.view.html',
+                controller: 'speakersCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/speakerInstitution', {
+                templateUrl: '/speakers/speakerinstitution.view.html',
+                controller: 'speakersCtrl',
+                controllerAs: 'vm'
+            })
             .when('/speaker/:speakerid', {
                 templateUrl: '/details/speakerDetail/speakerDetail.view.html',
                 controller: 'speakerDetailCtrl',
@@ -56,7 +66,7 @@
                 controllerAs: 'vm'
             })
             .when('/myschedule', {
-                templateUrl: '/mySchedule/mySchedule.view.html',
+                templateUrl: '/myschedule/myschedule.view.html',
                 controller: 'myScheduleCtrl',
                 controllerAs: 'vm'
             })
@@ -68,6 +78,26 @@
             .when('/login', {
                 templateUrl: '/auth/login/login.view.html',
                 controller: 'loginCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/local', {
+                templateUrl: '/local/local.view.html',
+                controller: 'localCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/faq', {
+                templateUrl: '/faq/faq.view.html',
+                controller: 'faqCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/wifi', {
+                templateUrl: '/wifi/wifi.view.html',
+                controller: 'wifiCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/maps', {
+                templateUrl: '/maps/maps.view.html',
+                controller: 'mapsCtrl',
                 controllerAs: 'vm'
             })
             .otherwise({ redirectTo: '/' });

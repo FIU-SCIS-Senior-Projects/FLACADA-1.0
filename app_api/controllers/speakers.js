@@ -115,3 +115,17 @@ module.exports.createSpeakerSession = function (req, res) {
             });
     });
 };
+/* POST /speakers */
+module.exports.createSpeaker = function (req, res) {
+    console.log(req.body);
+    Speakers
+        .create(req.body, function (err, speaker) {
+            if(err) {
+                console.log(err);
+                sendJSONresponse(res, 404, err);
+                return;
+            }
+            console.log('Speaker created! ' + speaker);
+            sendJSONresponse(res, 200, speaker);
+        })
+};

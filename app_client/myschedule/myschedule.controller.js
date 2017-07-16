@@ -9,7 +9,6 @@
         var vm = this;
         vm.pageHeader = 'My schedule';
         vm.isLoggedIn = authentication.isLoggedIn();
-        vm.sessionsExist = false;
 
         flacadaData.getMySessions()
             .success(function (data) {
