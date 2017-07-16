@@ -12,7 +12,7 @@ vm.status = {
   };
     vm.pageHeader = 'FLACADA';
     vm.welcome = {
-      title: 'WELCOME',
+      title: 'ABOUT US',
       bylaws: "http://www.flacada.org/wp-content/uploads/2016/10/FLACADA-Constitution-and-Bylaws.pdf",
       membership: "http://www.flacada.org/membership/"
     };
