@@ -4,13 +4,12 @@ The Florida Academic Advising Association (FLACADA) web application allows users
 
 ### Installing (Mac)
 
-
 * Clone this repo and navigate to the root directory and run the command
-* $npm install
+  $npm install
 * Download mongodb - [Here's how to set it up](https://docs.mongodb.com/manual/administration/install-community/)
 * Then open a terminal window and run:
-* $ mongod
-* $ use flacada
+ $ mongod
+ $ use flacada
 * Since it'll be an empty database, much of the pages won't be populated.
 * To run the application run $nodemon start for a local environment and open your preferred browser and navigate to localhost:3000
 
