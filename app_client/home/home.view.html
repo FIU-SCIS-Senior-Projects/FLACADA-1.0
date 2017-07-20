@@ -11,7 +11,7 @@
             <uib-accordion close-others="vm.oneAtATime">
               <div uib-accordion-group class="panel-default" is-open="vm.status.open">
                 <uib-accordion-heading>
-                  {{vm.welcome.title}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.status.open, 'glyphicon-chevron-right': !vm.status.open}"></i>
+                  {{vm.welcome.title}} <span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.status.open, 'glyphicon-chevron-right': !vm.status.open}"></span>
                 </uib-accordion-heading>
                 <p><a ng-href="{{vm.welcome.bylaws}}" target="_blank">Bylaws</a></p>
                 <p><a ng-href="{{vm.welcome.membership}}" target="_blank">Membership</a></p>
@@ -22,8 +22,8 @@
             <uib-accordion close-others="vm.oneAtATime">
               <div uib-accordion-group class="panel-default" is-open="vm.status.isCustomHeaderOpen">
                 <uib-accordion-heading>
-                  {{vm.sociallinks.title}} <i class="pull-right glyphicon" 
-                  ng-class="{'glyphicon-chevron-down': vm.status.isCustomHeaderOpen, 'glyphicon-chevron-right': !vm.status.isCustomHeaderOpen}"></i>
+                  {{vm.sociallinks.title}} <span class="pull-right glyphicon" 
+                  ng-class="{'glyphicon-chevron-down': vm.status.isCustomHeaderOpen, 'glyphicon-chevron-right': !vm.status.isCustomHeaderOpen}"></span>
                 </uib-accordion-heading>
                 <p><a ng-href="{{vm.sociallinks.facebook}}" target="_blank">Facebook</a></p>
                 <p><a ng-href="{{vm.sociallinks.instagram}}" target="_blank">Instagram</a></p>
