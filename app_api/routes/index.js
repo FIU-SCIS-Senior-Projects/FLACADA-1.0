@@ -51,6 +51,6 @@ router.post('/login', ctrlAuth.login);
 router.get('/mysessions', auth, ctrlMySession.getMySessions);
 router.post('/mysessions/:sessionid', auth, ctrlMySession.addMySession);
 router.delete('/mysessions', auth, ctrlMySession.deleteMySessions);
-router.delete('/mysessions/:sessionid', auth, ctrlMySession.deleteOneSpeaker);
+router.delete('/mysessions/:sessionid', auth, ctrlMySession.deleteOneSession);
 
 module.exports = router;

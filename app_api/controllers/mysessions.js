@@ -38,9 +38,6 @@ module.exports.addMySession = function (req, res) {
     var userid = req.payload._id;
     var sessionid = req.params.sessionid;
     var time = req.body.startTime;
-    var compareDate = new Date(time)
-
-
     MySessions
         .findOneAndUpdate({
             postedBy: userid
@@ -57,8 +54,6 @@ module.exports.addMySession = function (req, res) {
                 sendJSONresponse(res, 404, err);
                 return;
             }
-
-            //console.log(mysession);
             sendJSONresponse(res, 200, mysession);
         }
 
@@ -85,10 +80,8 @@ module.exports.deleteMySessions = function (req, res) {
 }
 
 /** DELETE /mysessions/:sessionid */
-module.exports.deleteOneSpeaker = function (req, res) {
-
+module.exports.deleteOneSession = function (req, res) {
     var userid = req.payload._id;
-
     MySessions.findOneAndUpdate({
         postedBy: userid
     }, {

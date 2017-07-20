@@ -40,6 +40,9 @@ $ heroku login
 * To create a local repository of the heroku application:
 $ heroku git:remote -a sheltered-mesa-44284
 * To open the remore database for the heroku app:
+* First install adds by running:
+$ heroku addons:add mongolab
+* Then:
 $ heroku addons:open mongolab
 * To push data into the application, create a temporary folder:
 * mkdir -p ~/tmp/mongodump
