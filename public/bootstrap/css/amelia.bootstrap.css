@@ -7520,11 +7520,12 @@ i {
   background: #fff;
   color: #091f40 ;
   background: rgba(255,255,255,0.90);
-  padding: 10px;
+  padding: 2px;
   display: inline-block;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 #weather .currently {
   margin: 0 20px;
 }
+
