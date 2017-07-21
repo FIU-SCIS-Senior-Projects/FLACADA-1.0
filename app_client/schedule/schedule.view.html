@@ -27,8 +27,8 @@
 
                                 <p class="sessionStartTime">{{ session.startTime | date : 'longDate' }}
                                 </p>
-                                <p class="sessionStartTime">{{ session.startTime | date : 'h:mm a' : 'UTC' }} - {{ session.endTime | date : 'h:mm a'
-                                    : 'UTC'}}
+                                <p class="sessionStartTime">{{ session.startTime | date : 'h:mm a' }} - {{ session.endTime | date : 'h:mm a'
+                                    }}
                                 </p>
                                 <p> <span class="glyphicon glyphicon-map-marker"></span> {{session.location}} </p>
                                  <div  ng-if="vm.isAdmin" ng-click="vm.addSpeakerForm(session._id)" class="btn btn-success btn-sm ">+Speaker</div>
