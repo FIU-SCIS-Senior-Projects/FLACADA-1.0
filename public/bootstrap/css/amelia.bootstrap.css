@@ -7518,10 +7518,10 @@ i {
 
 #weather li {
   background: #fff;
-  font-size: 13px;
+  font-size: 11px;
   color: #091f40 ;
   background: rgba(255,255,255,0.90);
-  padding: 5px;
+  padding: 4px;
   display: inline-block;
   border-radius: 5px;
   margin: -5px;
