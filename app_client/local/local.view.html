@@ -1,0 +1,59 @@
+<navigation>
+</navigation>
+
+<div class="container">
+    <icon></icon>
+    <page-header content="vm.pageHeader"></page-header>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">Local Events</h2>
+                        </div>
+                        <div class="panel-body" ng-repeat="event in vm.localevents">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p>{{ event.name }}</p>
+                                    <div ng-if="vm.isAdmin" ng-click="" class="btn btn-danger pull-right btn-sm">
+                                        <span class="glyphicon glyphicon-trash"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">Dining Options</h2>
+                        </div>
+                        <div class="panel-body" ng-repeat="option in vm.dining">
+                            <div class="row">
+                            <div class="col-xs-12">
+                                    <p>{{ option.name }}</p>
+                                    <div ng-if="vm.isAdmin" ng-click="" class="btn btn-danger pull-right btn-sm">
+                                        <span class="glyphicon glyphicon-trash"> </div>
+                                    <p> <span class="glyphicon glyphicon-map-marker"></span>{{option.location}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">Weather</h2>
+                            </div>
+                            <div class="panel-body">
+                                    <div id="weather" ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-10">
+                        <a href="/conference/" class="btn btn-warning">Back to Conference</a>
+                        <a ng-if="vm.isAdmin" ng-click="" class="btn btn-success">Add Local</a>
+                        <a ng-if="vm.isAdmin" ng-click="" class="btn btn-danger">Reset</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer-generic></footer-generic>
+    </div>

@@ -1,0 +1,35 @@
+<navigation></navigation>
+
+<div class="container">
+    <icon></icon>
+    <page-header content="vm.pageHeader"></page-header>
+    <div class="row">
+        <div class="col-xs-12 col-md-7">
+            <div class="row">
+                <div class="col-xs-12 col-md-7">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading"></div>
+                        <div class="panel-body" ng-repeat="exhibitor in vm.data.exhibitors">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <img ng-src="{{exhibitor.image}}" height="60" width="60">
+                                </div>
+                                <div class="col-xs-8">
+                                    <a href="/exhibitor/{{ exhibitor._id }}">{{ exhibitor.name }}</a>
+                                     <div ng-if="vm.isAdmin" ng-click="vm.delete(exhibitor._id)" class="btn btn-danger pull-right btn-sm">
+                                         <span class="glyphicon glyphicon-trash"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-7">
+                    <a href="/conference/" class="btn btn-warning">Back to Conference</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.popupExhibitorForm()" class="btn btn-success">Add Exhibitor</a>
+                    <a ng-if="vm.isAdmin" ng-click="vm.deleteAll()" class="btn btn-danger">Reset</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer-generic></footer-generic>
+</div>

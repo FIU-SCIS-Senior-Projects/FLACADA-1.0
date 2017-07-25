@@ -1,0 +1,36 @@
+<navigation></navigation>
+
+<div class="container">
+    <icon></icon>
+    <div class="row page-header">
+        <div class="col-lg-12">
+            <h1>{{vm.data.exhibitor.name}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-4">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <img ng-src="{{vm.data.exhibitor.image}}"style="width:80px">
+                                </div>
+                                <div class="col-xs-8">
+                                    <p>{{vm.data.exhibitor.name}}</p>
+                                    <p><a ng-href="{{vm.data.exhibitor.website}}" target="_blank">Website </a></p>
+                                    <p> {{vm.data.exhibitor.description}} </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                   <div class="col-xs-12"><a href="/exhibitors/" class="btn btn-warning">Back to Exhibitors</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer-generic></footer-generic>

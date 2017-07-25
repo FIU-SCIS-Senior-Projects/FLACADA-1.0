@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    .row.page-header
+        .col-lg-12
+            h1= title
+    .row
+        .col-xs-12.col-md-8
+            .row
+                .col-xs-12.col-sm-8
+
+                    .panel.panel-primary
+                        .panel-heading
+                            h2.panel-title INTERACT
+                        .panel-body
+                            p:#[a(href= '/schedule/') Schedule]
+                            p:#[a(href= '/exhibitors/') Exhibitors]
+                            p:#[a(href= '/speakers/') Speakers]
+                            p:#[a(href= '/sponsors/') Sponsors]
+
+                .col-xs-12.col-sm-4
+                    a.btn.btn-default My Schedule

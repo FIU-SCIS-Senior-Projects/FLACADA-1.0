@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/bootstrap/css/amelia.bootstrap.css')
+    img(src="/images/flacada.png", width="250")
+
+  body
+    .navbar.navbar-default.navbar-fixed-bottom
+      .container
+        .navbar-header
+          a.navbar-brand(href='/') FLACADA
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-main')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        #navbar-main.navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li
+              a(href='/conference/') Conference
+            li  
+              a(href='http://www.flacada.org/newsletter/' target="_blank") Newsletter
+            li  
+              a(href='http://www.cafepress.com/flacada' target="_blank") Shop
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                | More
+                span.caret
+              ul.dropdown-menu
+                li
+                  a(href='http://www.flacada.org/resources/' target="_blank") Resources
+                li
+                  a(href='http://www.flacada.org/resources/get-involved/' target="_blank") Get Involved!
+                li
+                  a(href='http://www.flacada.org/resources/career-opportunities/' target="_blank") Jobs
+                li
+                  a(href='http://www.flacada.org/contact-us/' target="_blank") Contact us
+    .container
+      block content
+
+      footer
+        .row
+          .col-xs-12
+            small &copy; FLACADA
+
+
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/bootstrap/js/bootstrap.min.js')
+

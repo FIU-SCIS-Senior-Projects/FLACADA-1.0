@@ -1,0 +1,10 @@
+// RUN ON LIVE DB
+NODE_ENV=production MONGODB_URI=mongodb://nimorale:Niccck46@ds149221.mlab.com:49221/heroku_gx21n5ht nodemon start
+
+//RUN LOCALLY (make sure you have mongod db running <$sudo mongod>)
+nodemon start
+
+mongorestore -h ds157702.mlab.com:57702 -d heroku_xgdzxgf9 -u root -p root ~/tmp/mongodump/flacada
+
+
+mongo ds157702.mlab.com:57702/heroku_xgdzxgf9 -u root -p root

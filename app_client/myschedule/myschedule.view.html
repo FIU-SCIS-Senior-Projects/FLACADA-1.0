@@ -1,0 +1,46 @@
+<navigation></navigation>
+
+<div class="container">
+    <icon></icon>
+    <page-header content="vm.pageHeader"></page-header>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 align="center" class="panel-title">My schedule |<a href="/schedule/"> Schedule</a>
+                            </h1>
+                        </div> {{vm.data.postedBy}}
+                        <div class="panel-body" ng-repeat="session in vm.data.mysessions.sessions | orderBy: 'startTime'">
+                            <div class="row">
+                                <p>
+                                    <div class="col-xs-12"><span class="glyphicon glyphicon-calendar"></span>
+                                        <a ng-href="/schedule/{{ session._id }}">{{ session.name }}</a>
+                                </p>
+
+                                <div ng-if="vm.isLoggedIn" ng-click="vm.deleteMySession(session._id)" 
+                                class="btn btn-danger pull-right btn-sm"
+                                ><span class="glyphicon glyphicon-trash"> </span> 
+                                </div>
+
+                                <p class="sessionStartTime">{{ session.startTime | date : 'longDate' }}
+                                </p>
+                                <p class="sessionStartTime">{{ session.startTime | date : 'h:mm a' : 'UTC' }} - {{ session.endTime | date : 'h:mm a'
+                                    : 'UTC'}}
+                                </p>
+                                <p> <span class="glyphicon glyphicon-map-marker"></span>                                    {{session.location}} </p>
+                                </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-13"><a href="/conference/" class="btn btn-warning">Back to Conference</a>
+                            <a ng-if="vm.isLoggedIn" ng-click="vm.deleteAllMySessions()" class="btn btn-danger">Start over</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer-generic></footer-generic>
+    </div>

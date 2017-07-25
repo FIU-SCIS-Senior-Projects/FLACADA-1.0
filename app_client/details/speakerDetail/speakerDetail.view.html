@@ -1,0 +1,34 @@
+<navigation></navigation>
+
+<div class="container">
+    <icon></icon>
+    <page-header content="vm.pageHeader"></page-header>
+    <div class="row">
+        <div class="col-xs-12 col-md-4">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <img ng-src="{{vm.data.speaker.picture}}" style="width:80px">
+                                </div>
+                                <div class="col-xs-8">
+                                    <p> {{vm.data.speaker.title}} </p>
+                                    <p>{{vm.data.speaker.institution}}</p>
+                                    <p> <span class="glyphicon glyphicon-envelope"></span> {{vm.data.speaker.email}} </p>
+                                    <p>Sessions: </p>
+                                    <div ng-repeat="session in vm.data.speaker.sessions">
+                                        <p> <a href="/schedule/{{ session._id }}">{{ session.name}}</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12"><a href="/speakers/" class="btn btn-warning">Back to Speakers</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer-generic></footer-generic>

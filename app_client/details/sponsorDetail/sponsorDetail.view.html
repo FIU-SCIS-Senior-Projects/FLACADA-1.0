@@ -1,0 +1,29 @@
+<navigation></navigation>
+
+<div class="container">
+<icon></icon>
+<page-header content="vm.pageHeader"></page-header>
+<div class="row">
+    <div class="col-xs-12 col-md-4">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <img ng-src="{{vm.data.sponsor.image}}"style="width:80px">
+                            </div>
+                            <div class="col-xs-8">
+                                <p><a ng-href="{{vm.data.sponsor.website}}" target="_blank">Website </a></p>
+                                <p> {{vm.data.sponsor.description}} </p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+                            <div class="col-xs-12"><a href="/sponsors/" class="btn btn-warning">Back to Sponsors</a>
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+<footer-generic></footer-generic>

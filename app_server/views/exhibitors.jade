@@ -1,0 +1,25 @@
+extends layout
+block content
+    .row.page-header
+        .col-lg-12
+            h1= title
+    .row
+        // TODO CHANGE HERE FOR LINKING PROBLEMS
+        .col-xs-12.col-md-7
+            .row
+                .col-xs-12.col-sm-8
+                    .panel.panel-primary
+                        .panel-heading
+                        .panel-body
+                            each exhibitor in exhibitorsList
+                                .row
+                                    .col-xs-4
+                                        img(src=exhibitor.imageOf)
+                                    .col-xs-8
+                                        a(href='/exhibitors-info/') #{exhibitor.nameOf}
+                                hr
+                .col-xs-12
+                    a.btn.btn-warning( href="/conference/" ) Back to Conference
+                    a.btn.btn-success.pull-right +
+                    a.btn.btn-danger.pull-right -
+                        //TODO: linking to the according exhibitors-info

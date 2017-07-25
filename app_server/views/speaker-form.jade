@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    .row.page-header
+        .col-lg-12
+            h1= title
+    .row
+        .col-xs-12.col-md-6
+            form.form-horizontal(action="/schedule", method="post", role="form")
+                .form-group
+                    label.col-xs-10.col-sm-2.control-label(for="name") Name
+                    .col-xs-12.col-sm-10
+                        input#name.form-control(name="name")
+                .form-group
+                    label.col-xs-10.col-sm-2.control-label(for="picture") Picture
+                    .col-xs-12.col-sm-10
+                        input#picture.form-control(name="picture")
+                .form-group
+                    label.col-xs-10.col-sm-2.control-label(for="sessions") Session(s)
+                    .col-xs-12.col-sm-10
+                        input#sessions.form-control(name="sessions")
+                .form-group
+                    label.col-sm-2.control-label(for="description") Description
+                    .col-sm-10
+                        textarea#description.form-control(name="description", rows="5")
+                button.btn.btn-default.pull-right Add Speaker
+        .col-xs-12.col-md-4
